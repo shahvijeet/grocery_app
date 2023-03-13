@@ -1,7 +1,7 @@
 
 img{
-    width: 50% !important;
-    height: 50% !important;
+    width: 70% !important;
+    height: 70% !important;
 }
 .seller h1{
     font-size: 3rem;
@@ -29,4 +29,11 @@ img{
     font-weight: bold;
     font-size: 20px;
     margin-left: 50px;
+}
+.btn{
+    height: 40px;
+    width: 90px;
+    padding: 10%;
+    background-color:bisque;
+    color: black;
 }
