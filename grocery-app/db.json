@@ -1,0 +1,16 @@
+{
+  "usersignup": [
+    {
+      "name": "Vijeet Shah",
+      "email": "vijeet@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Veer Shah",
+      "email": "veer@gmail.com",
+      "id": 2
+    }
+  ],
+
+  "userlogin":[]
+}

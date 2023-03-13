@@ -1,0 +1,32 @@
+
+img{
+    width: 70% !important;
+    height: 70% !important;
+}
+.seller h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.value .star{
+    color: orange;
+}
+.seller .card{
+    border-radius: 0;
+    border: none;
+}
+.jp{
+    margin-left: 10px;
+    font-size: 13px;
+    color: gray;
+}
+.sp{
+    font-weight: bold;
+}
+.border-primary{
+    border: 0 !important;
+}
+.Top{
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 50px;
+}
