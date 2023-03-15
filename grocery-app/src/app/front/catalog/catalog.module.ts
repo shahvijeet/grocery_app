@@ -12,7 +12,8 @@ import { CoreModule } from 'src/app/core/core.module';
   declarations: [
     CategoryComponent,
     ProductListComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    
   ],
   imports: [
     CommonModule,

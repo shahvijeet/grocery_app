@@ -1,2 +1,91 @@
 <app-header></app-header>
-<p>category works!</p>
+
+<nav class="navbar navbar-light bg-light ">
+  <a class="navbar-brand" href="/catalog/category"><i class="fa-regular fa-grid-2"></i>All-Category</a>
+  <form class="d-flex">
+      <a class="navbar-brand"><i class="fa-solid fa-phone"></i><span>223-224-25</span>
+          <br><span>24*7Support center</span></a>
+  </form>
+</nav>
+
+<main id="intro" class="bg-image" style="
+      background-image: url(https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JvY2VyeXxlbnwwfHwwfHw%3D&w=1000&q=80);
+      height: 50vh;
+            background-repeat:initial;  ">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.7)"></div>
+</main>
+<div style="margin-left: 90%">
+  <!-- <button type="button" class="btn btn-outline-success" "><i class="fa-sharp fa-solid fa-filter"></i></button> -->
+  <a class="navbar-brand px-4 nav-link dropdown-toggle" href="#" id="navbarDropdown"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-sharp fa-solid fa-filter"></i>
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <li><a class="dropdown-item " (click)="filterPeopleByAge('Fruit')" >Fruits</a></li>
+    <li><a class="dropdown-item" (click)="filterPeopleByAge('Vegetables')">Vegetables</a></li>
+    
+  </ul>
+</div>
+
+<div Class="container" >
+    <div class="card" style="width: 18rem" *ngFor="let data of array">
+      <img src="/assets/{{data.img}}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <p class="card-text">{{data.catagory}}</p>
+        <h5 class="card-title">{{data.cat_name}} {{data.quantity}}g</h5>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star unchecked"></span>
+        <div class="d-flex justify-content-between">
+          <h5>${{data.price}}</h5>
+          <span class="text-decoration-line-through">$5</span>
+          <a href="#" class="btn btn-primary">Add</a>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div Class="container" >
+      <div class="card" style="width: 18rem" *ngFor="let data of array">
+        <img src="/assets/{{data.img}}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <p class="card-text">{{data.catagory}}</p>
+          <h5 class="card-title">{{data.cat_name}} {{data.quantity}}g</h5>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star unchecked"></span>
+          <div class="d-flex justify-content-between">
+            <h5>${{data.price}}</h5>
+            <span class="text-decoration-line-through">$5</span>
+            <a href="#" class="btn btn-primary">Add</a>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div Class="container" >
+        <div class="card" style="width: 18rem" *ngFor="let data of array">
+          <img src="/assets/{{data.img}}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <p class="card-text">{{data.catagory}}</p>
+            <h5 class="card-title">{{data.cat_name}} {{data.quantity}}g</h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star unchecked"></span>
+            <div class="d-flex justify-content-between">
+              <h5>${{data.price}}</h5>
+              <span class="text-decoration-line-through">$5</span>
+              <a href="#" class="btn btn-primary">Add</a>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <ul>
+          <li *ngFor="let cat of filteredPeople">{{ cat.cat_name }}</li>
+        </ul>
+      
+    <app-footer></app-footer>
