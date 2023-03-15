@@ -20,14 +20,15 @@
     <i class="fa-sharp fa-solid fa-filter"></i>
   </a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <li><a class="dropdown-item " (click)="filterPeopleByAge('Fruit')" >Fruits</a></li>
-    <li><a class="dropdown-item" (click)="filterPeopleByAge('Vegetables')">Vegetables</a></li>
+    <!-- <li><a class="dropdown-item " (click)="filtercatagorybyitem('catagory')" >All</a></li> -->
+    <li><a class="dropdown-item " (click)="filtercatagorybyitem('fruits')" >Fruits</a></li>
+    <li><a class="dropdown-item" (click)="filtercatagorybyitem('vagetables')">Vegetables</a></li>
     
   </ul>
 </div>
 
 <div Class="container" >
-    <div class="card" style="width: 18rem" *ngFor="let data of array">
+    <div class="card" style="width: 18rem" *ngFor="let data of filteredcatagory">
       <img src="/assets/{{data.img}}" class="card-img-top" alt="..." />
       <div class="card-body">
         <p class="card-text">{{data.catagory}}</p>
@@ -46,7 +47,7 @@
     </div>
     </div>
     <div Class="container" >
-      <div class="card" style="width: 18rem" *ngFor="let data of array">
+      <div class="card" style="width: 18rem" *ngFor="let data of filteredcatagory">
         <img src="/assets/{{data.img}}" class="card-img-top" alt="..." />
         <div class="card-body">
           <p class="card-text">{{data.catagory}}</p>
@@ -65,7 +66,7 @@
       </div>
       </div>
       <div Class="container" >
-        <div class="card" style="width: 18rem" *ngFor="let data of array">
+        <div class="card" style="width: 18rem" *ngFor="let data of filteredcatagory">
           <img src="/assets/{{data.img}}" class="card-img-top" alt="..." />
           <div class="card-body">
             <p class="card-text">{{data.catagory}}</p>
@@ -84,8 +85,5 @@
         </div>
         </div>
 
-        <ul>
-          <li *ngFor="let cat of filteredPeople">{{ cat.cat_name }}</li>
-        </ul>
-      
+        
     <app-footer></app-footer>
