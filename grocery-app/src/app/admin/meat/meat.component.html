@@ -1,0 +1,136 @@
+<app-admin-header></app-admin-header>
+
+<div class="container">
+    <nav class="navbar navbar-light bg-primary">
+        <div class="container-fluid">
+            <h2 style="color: black;">Add User</h2>
+            <div class="d-flex">
+                <button (click)="clickAddUser()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add User</button>
+            </div>
+        </div>
+    </nav>
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th scope="col">User Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Offer_Price</th>
+                <th scope="col">Image</th>
+                <th scope="col">company</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of userData">
+                <td>{{row.id}}</td>
+                <td>{{row.name}}</td>
+                <td>{{row.category}}</td>
+                <td>{{row.price}}</td>
+                <td>{{row.Offer_Price}}</td>
+                <td><img src="{{row.Image}}" /></td>
+                <td>{{row.company}}</td>
+                <td>
+                    <button (click)="editUserDetails(row)" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                    <button (click)="deletUserDetails(row)" class="btn btn-danger mx-3">Delet</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Add user</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+    
+                <form [formGroup]="formValue" (ngSubmit)="sign()">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Name</label>
+                      <input type="text" formControlName="name" [ngClass]="{'is-invalid':submitted && formValue.controls['name'].errors}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div *ngIf="submitted && formValue.controls['name'].errors" class="text-danger">
+                        <div *ngIf="submitted && formValue.controls['name'].errors['required'] ">
+                            Enter a Name
+                        </div>
+                        <div *ngIf="submitted && formValue.controls['name'].errors['minlength']">
+                            Name should be greater than 4 letters
+                        </div>
+                        <div *ngIf="submitted && formValue.controls['name'].errors['maxlength']">
+                            Name should be less than 10 letters
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">category</label>
+                      <input type="text" formControlName="category" [ngClass]="{'is-invalid':submitted && formValue.controls['category'].errors}" class="form-control" id="exampleInputPassword1">
+                      <div *ngIf="submitted && formValue.controls['category'].errors" class="text-danger">
+                        <div *ngIf="submitted && formValue.controls['category'].errors['required']">
+                            Enter a category
+                        </div>
+                    </div>
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">price</label>
+                      <input type="text" formControlName="price" [ngClass]="{'is-invalid':submitted && formValue.controls['price'].errors}" class="form-control" id="exampleInputPassword1">
+                      <div *ngIf="submitted && formValue.controls['price'].errors" class="text-danger">
+                        <div *ngIf="submitted && formValue.controls['price'].errors['required']">
+                            Enter a price
+                        </div>
+                    </div>
+                    </div>
+
+              <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Offer_Price</label>
+                      <input type="text" formControlName="Offer_Price" [ngClass]="{'is-invalid':submitted && formValue.controls['Offer_Price'].errors}" class="form-control" id="exampleInputPassword1">
+                      <div *ngIf="submitted && formValue.controls['Offer_Price'].errors" class="text-danger">
+                        <div *ngIf="submitted && formValue.controls['Offer_Price'].errors['required']">
+                            Enter a Offer Price
+                        </div>
+                    </div>
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Image</label>
+                        <input type="text" formControlName="Image" [ngClass]="{'is-invalid':submitted && formValue.controls['Image'].errors}" class="form-control" id="exampleInputPassword1">
+                        <div *ngIf="submitted && formValue.controls['Image'].errors" class="text-danger">
+                          <div *ngIf="submitted && formValue.controls['Image'].errors['required']">
+                              Enter a Image
+                          </div>
+                      </div>
+                      </div>
+    
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Company</label>
+                        <input type="text" formControlName="company" [ngClass]="{'is-invalid':submitted && formValue.controls['company'].errors}" class="form-control" id="exampleInputPassword1">
+                        <div *ngIf="submitted && formValue.controls['company'].errors" class="text-danger">
+                          <div *ngIf="submitted && formValue.controls['company'].errors['required'] ">
+                              Enter a company
+                          </div>
+                          <div *ngIf="submitted && formValue.controls['company'].errors['minlength']">
+                            company should be greater than 4 letters
+                          </div>
+                          <div *ngIf="submitted && formValue.controls['company'].errors['maxlength']">
+                            company should be less than 15 letters
+                          </div>
+                      </div>
+                      </div>
+    
+                    <div class="modal-footer">
+                      <button type="submit" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" *ngIf="showAdd" (click)="postUserDetails()" class="btn btn-primary">Add User</button>
+                      <button type="submit" *ngIf="showUpdate" (click)="updateUserDetails()" class="btn btn-primary">Update User</button>
+                    </div>
+                  </form>
+    
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>

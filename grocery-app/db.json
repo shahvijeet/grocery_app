@@ -9,6 +9,14 @@
       "name": "Veer Shah",
       "email": "veer@gmail.com",
       "id": 2
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "password": "",
+      "age": "",
+      "mobile": "",
+      "id": 3
     }
   ],
   "userlogin": [
@@ -20,5 +28,9 @@
       "mobile": "",
       "id": 1
     }
-  ]
+  ],
+  "vegetables": [],
+  "fruits": [],
+  "Coffee-tea": [],
+  "meat": []
 }
