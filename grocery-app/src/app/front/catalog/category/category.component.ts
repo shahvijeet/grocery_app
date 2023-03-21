@@ -14,9 +14,15 @@ export class CategoryComponent {
     {catagory:'fruits',cat_name:'apple',quantity:500,price:2,img:'apple.png'},
     ]
     filteredcatagory = this.array;
-
+    
     filtercatagorybyitem(catagory: string) {
+      if(catagory == 'all'){
+        this.filteredcatagory = this.array;
+      }
+      else
+      {
       this.filteredcatagory = this.array.filter((array: { catagory: string; }) => array.catagory == catagory);
     }
+  }
 }
 
