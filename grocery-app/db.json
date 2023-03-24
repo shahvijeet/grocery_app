@@ -32,5 +32,97 @@
   "vegetables": [],
   "fruits": [],
   "Coffee-tea": [],
-  "meat": []
+  "meat": [],
+  "fea_product": [
+    {
+      "id": 1,
+      "catagory": "vagetables",
+      "cat_name": "potato",
+      "quantity": "500",
+      "price": 2,
+      "img": "potato.png"
+    },
+    {
+      "id": 2,
+      "catagory": "Fruits",
+      "cat_name": "apple",
+      "quantity": "500",
+      "price": 2,
+      "img": "apple.png"
+    },
+    {
+      "id": 3,
+      "catagory": "Fruits",
+      "cat_name": "banana",
+      "quantity": "500",
+      "price": 2,
+      "img": "banana.png"
+    },
+    {
+      "id": 4,
+      "catagory": "vagetables",
+      "cat_name": "carrot",
+      "quantity": "500",
+      "price": 2,
+      "img": "carrot.png"
+    },
+    {
+      "id": 5,
+      "catagory": "Fruits",
+      "cat_name": "orange",
+      "quantity": "500",
+      "price": 2,
+      "img": "orange.png"
+    },
+    {
+      "id": 6,
+      "catagory": "Fruits",
+      "cat_name": "strawberry",
+      "quantity": "500",
+      "price": 2,
+      "img": "strawberry.png"
+    },
+    {
+      "id": 7,
+      "catagory": "vagetables",
+      "cat_name": "tomato",
+      "quantity": "500",
+      "price": 2,
+      "img": "tomato.png"
+    },
+    {
+      "id": 8,
+      "catagory": "vegetables",
+      "cat_name": "brocoli",
+      "quantity": "500",
+      "price": 2,
+      "img": "brocoli.png"
+    }
+  ],
+  "cart": [
+    {
+      "id": 2,
+      "catagory": "Fruits",
+      "cat_name": "apple",
+      "quantity": "500",
+      "price": 2,
+      "img": "apple.png"
+    },
+    {
+      "id": 4,
+      "catagory": "vagetables",
+      "cat_name": "carrot",
+      "quantity": "500",
+      "price": 2,
+      "img": "carrot.png"
+    },
+    {
+      "id": 5,
+      "catagory": "Fruits",
+      "cat_name": "orange",
+      "quantity": "500",
+      "price": 2,
+      "img": "orange.png"
+    }
+  ]
 }

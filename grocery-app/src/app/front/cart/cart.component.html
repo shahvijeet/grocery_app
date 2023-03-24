@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+
+<div class="card row justify-content-center mx-auto" style="width: 18rem;" *ngFor="let p_details of cartData">
+    <img src="/assets/{{p_details.img}}" class="card-img-top" alt="...">
+    <h3>{{p_details.cat_name}}</h3>
+    <p>1kg , {{p_details.price |currency }}</p>
+   
+    <div >
+        
+        <button class="btn" (click)="counter('minus')">-</button>
+        <span>{{quantityitem}}</span>
+        <button class="btn" (click)="counter('add')">+</button>
+</div>
+    <hr>
+    <button class="btn1" (click)="delCartData(p_details.id)">Delete</button>
+</div>
+
+<app-footer></app-footer>

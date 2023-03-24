@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // import { AppComponent } from '../app.component';
 import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
-import { CategoryComponent } from './catalog/category/category.component';
+import { CartComponent } from './cart/cart.component';
+// import { CategoryComponent } from './catalog/category/category.component';
 import { HomeComponent } from './home/home.component';
 // import { CategoryComponent } from './catalog/category/category.component';
 // import { ProfileComponent } from './user/profile/profile.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'front',component:HomeComponent},
   {path:'home',component:HomeComponent},
+  {path:'cart',component:CartComponent},
   
   
   {

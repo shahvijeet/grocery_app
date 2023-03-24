@@ -1,0 +1,15 @@
+.img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+i{
+    color:rgb(241, 241, 0);
+    
+}

@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FrontModule } from './front/front.module';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FrontModule } from './front/front.module';
     CoreModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FrontModule
+    FrontModule,
+    IvyCarouselModule
   
   ],
   providers: [],

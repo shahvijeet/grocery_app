@@ -6,6 +6,7 @@ import { CategoryComponent } from './category/category.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CoreModule } from 'src/app/core/core.module';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { CoreModule } from 'src/app/core/core.module';
   imports: [
     CommonModule,
     CatalogRoutingModule,
-    CoreModule
+    CoreModule,
+    IvyCarouselModule
   ]
 })
 export class CatalogModule { }

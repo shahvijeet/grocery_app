@@ -7,6 +7,8 @@ import { CoreModule } from '../core/core.module';
 import { ExploreCategoryComponent } from './explore-category/explore-category.component';
 import { FeaturedProductsComponent } from './featured-products/featured-products.component';
 import { OtherDataComponent } from './other-data/other-data.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -14,12 +16,14 @@ import { OtherDataComponent } from './other-data/other-data.component';
     HomeComponent,
     ExploreCategoryComponent,
     FeaturedProductsComponent,
-    OtherDataComponent
+    OtherDataComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
     FrontRoutingModule,
-    CoreModule
+    CoreModule,
+    IvyCarouselModule
   ]
 })
 export class FrontModule { }
