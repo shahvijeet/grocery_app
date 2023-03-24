@@ -3,6 +3,12 @@
     width: 100%;
     object-fit: cover;
 }
+
+.img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
 /* side bars */
 * {
 	margin: 0;
@@ -103,8 +109,8 @@ body{
 }
 
 .content form .user-details{
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }

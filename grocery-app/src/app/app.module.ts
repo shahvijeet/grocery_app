@@ -15,6 +15,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
   declarations: [
     AppComponent,
     PagenotfoundComponent,
+   
   ],
   imports: [
     BrowserModule,

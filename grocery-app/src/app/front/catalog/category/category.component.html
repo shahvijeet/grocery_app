@@ -1,10 +1,7 @@
 <app-header></app-header>
-<main id="intro" class="bg-image" style="
-      background-image: url(https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JvY2VyeXxlbnwwfHwwfHw%3D&w=1000&q=80);
-      height: 50vh;
-            background-repeat:initial;  ">
-  <div class="mask" style="background-color: rgba(0, 0, 0, 0.7)"></div>
-</main>
+<div>
+  <img src="/assets/category.png" class="image" alt="...">
+</div>
 <div style="margin-left: 90%">
   <!-- <button type="button" class="btn btn-outline-success" "><i class="fa-sharp fa-solid fa-filter"></i></button> -->
   <a class="navbar-brand px-4 nav-link dropdown-toggle" href="#" id="navbarDropdown"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -20,7 +17,7 @@
 
 <div Class="container" >
     <div class="card" style="width: 18rem" *ngFor="let data of filteredcatagory">
-      <img src="/assets/{{data.img}}" class="card-img-top" alt="..." />
+      <img src="/assets/{{data.img}}" class="card" alt="..." />
       <div class="card-body">
         <p class="card-text">{{data.catagory}}</p>
         <h5 class="card-title">{{data.cat_name}} {{data.quantity}}g</h5>
@@ -39,7 +36,7 @@
     </div>
     <div Class="container" >
       <div class="card" style="width: 18rem" *ngFor="let data of filteredcatagory">
-        <img src="/assets/{{data.img}}" class="card-img-top" alt="..." />
+        <img src="/assets/{{data.img}}" class="card" alt="..." />
         <div class="card-body">
           <p class="card-text">{{data.catagory}}</p>
           <h5 class="card-title">{{data.cat_name}} {{data.quantity}}g</h5>
@@ -58,7 +55,7 @@
       </div>
       <div Class="container" >
         <div class="card" style="width: 18rem" *ngFor="let data of filteredcatagory">
-          <img src="/assets/{{data.img}}" class="card-img-top" alt="..." />
+          <img src="/assets/{{data.img}}" class="card" alt="..." />
           <div class="card-body">
             <p class="card-text">{{data.catagory}}</p>
             <h5 class="card-title">{{data.cat_name}} {{data.quantity}}g</h5>

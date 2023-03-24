@@ -6,13 +6,19 @@ import { ProfileComponent } from './profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 import { CoreModule } from 'src/app/core/core.module';
+import { OrderComponent } from './order/order.component';
+import { AddressComponent } from './address/address.component';
+import { ChangePassComponent } from './change-pass/change-pass.component';
 
 
 @NgModule({
   declarations: [
      LoginComponent,
     ProfileComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    OrderComponent,
+    AddressComponent,
+    ChangePassComponent
   ],
   imports: [
     CommonModule,
