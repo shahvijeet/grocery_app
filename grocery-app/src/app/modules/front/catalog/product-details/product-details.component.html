@@ -1,0 +1,25 @@
+
+<div>
+    <img src="/assets/pro-detail.png" class="img" alt="...">
+    </div>
+    <div class="card row justify-content-center mx-auto" style="width: 18rem;" *ngFor="let p_details of index">
+        <img src="/assets/{{p_details.img}}" class="card-img-top" alt="...">
+        <h3>{{p_details.cat_name}}</h3>
+        <p>1kg , {{p_details.price |currency }}</p>
+       
+        <div>Review 
+    
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half input-group-prepend "></i>
+        </div>
+        <hr>
+        <button (click)="addCart()" *ngIf="!isAddToCart">Add To Cart</button>
+    <button  routerLink="/front/cart" *ngIf="isAddToCart">Go To Cart</button>
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+

@@ -1,0 +1,22 @@
+
+.user{
+    margin-left: 250px;
+}
+.searchh{
+    margin-left: 50px;
+    width: 300px;
+}
+.myCart{
+    margin-left: 200px;
+    color: aliceblue;
+    font-size: 19px;   
+}
+.myCart:hover{
+    color: #f5f5f5;
+}
+
+.ccc{
+    margin-left: 20px;
+    color: aliceblue;
+    font-size: 19px;
+}

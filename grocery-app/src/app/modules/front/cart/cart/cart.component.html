@@ -1,0 +1,57 @@
+
+
+<div>
+    <img src="/assets/cart.png" class="img" alt="...">
+</div>
+
+
+<table class="table">
+    <thead>
+      <tr >
+        <th scope="col">Item Description</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Sub Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p_details of cartData;let i=index">
+        <td>{{p_details.quantity}}g  {{p_details.cat_name}}</td>
+        <td>{{p_details.price |currency }}</td>
+        <td> <div>
+            <button class="btn" (click)="subQuantity(p_details.id,i)">-</button>
+            <span>{{p_details.product_quantity}}</span>
+            <button class="btn" (click)="addQuantity(p_details.id,i)">+</button>
+    </div></td>
+    <td>{{p_details.product_quantity * p_details.price}}</td>
+    <td>
+       <i type="button" class="fa-solid fa-trash" (click)="delCartData(p_details.id)"></i>
+    </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="d-flex justify-content-end">
+    <div class="card" style="width: 18rem;">
+       <table class="table">
+    <tr>
+    <th>Sub TOTAL</th>
+    <th>{{total()}}</th>
+  </tr>
+  <tr>
+    <th>Delivary Charges</th>
+    <th>Free</th>
+  </tr>
+  <tr>
+    <th>Grand Total</th>
+    <th>{{total()}}</th>
+  </tr>
+  </table>
+  <a routerLink="/cart/checkout" class="btn btn-primary">Checkout</a>
+      </div>
+    </div>
+
+
+
+

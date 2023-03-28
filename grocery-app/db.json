@@ -97,9 +97,18 @@
       "cat_name": "potato",
       "quantity": "500",
       "price": 2,
-      "product_quantity": 10,
+      "product_quantity": 8,
       "img": "potato.png",
       "product_quan": null
+    },
+    {
+      "id": 4,
+      "catagory": "vagetables",
+      "cat_name": "carrot",
+      "quantity": "500",
+      "price": 2,
+      "product_quantity": 3,
+      "img": "carrot.png"
     }
   ]
 }
