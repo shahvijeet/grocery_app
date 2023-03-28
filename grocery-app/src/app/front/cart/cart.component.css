@@ -19,3 +19,28 @@
     object-fit: cover;
 }
 
+.table{
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+/* .tablee{
+    align-items: end;
+    width: auto;
+    margin: auto;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+} */

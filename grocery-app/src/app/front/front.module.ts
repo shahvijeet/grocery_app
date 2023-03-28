@@ -9,6 +9,7 @@ import { FeaturedProductsComponent } from './featured-products/featured-products
 import { OtherDataComponent } from './other-data/other-data.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './cart/checkout/checkout.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CartComponent } from './cart/cart.component';
     ExploreCategoryComponent,
     FeaturedProductsComponent,
     OtherDataComponent,
-    CartComponent
+    CartComponent,
+    CheckoutComponent
   ],
   imports: [
     CommonModule,

@@ -24,20 +24,53 @@ cartData:any;
         })
         this.getCartData()
     }
-    quantityitem:number=1;
-    counter(type:string){
-      if(type === "add"){
-        this.cartData[0].quantityitem++;
-      } else if(type === "minus" && this.cartData[0].quantityitem > 1){
-        this.cartData[0].quantityitem--;
-      }
+    products:any=[];
+    addQuantity(Id: any,i:any) {
+      this.cartData.forEach((item: { id: any; product_quantity: number; }) => {
+        if (item.id === Id) {
+          item.product_quantity++;
+          // console.log(item.product_quan)
+          // console.log(this.cartData)
+          
+        
+            console.log(this.cartData[i].product_quantity,"quant")
+            this.products=this.cartData[i]
+          this.products.product_quantity=item.product_quantity
+            
+          this.updateCartData(Id,this.products)
+            
+        }
+      });
+  
+  
+      
     }
+    subQuantity(Id: any,i:any) {
+      this.cartData.forEach((item: { id: any; product_quantity: number; }) => {
+        if (item.id === Id) {
+          if (item.product_quantity > 0){
+          item.product_quantity--;
+          this.products=this.cartData[i]
+          this.products.product_quantity=item.product_quantity
+            
+          this.updateCartData(Id,this.products)
+  
+        }
+      }
+      });
+    }
+  
+  updateCartData(id:any,products:any){
+    this.cartservice.updateCart(id,products).subscribe((res)=>{
+      console.log(res)
+    })
+  }
+  
+  total(){
+  const total=this.cartData.reduce((total:any, item:any) => total + item.product_quantity * item.price, 0)
+  return total;
+  }
   }
         
     
-    
-  //   count=1
-  //   counter(type:string){
-  //     type=="add" ? this.count++ : this.count--;
-  //   }
   

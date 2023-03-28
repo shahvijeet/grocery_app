@@ -20,5 +20,7 @@ getToCart(){
    delToCart(id:any){
     return this.http.delete(this.carturl+"/"+id)
    }
-
+   updateCart(id:any,products:any){
+    return this.http.put(this.carturl+"/"+id,products)
+   }
 }

@@ -9,26 +9,9 @@
       "name": "Veer Shah",
       "email": "veer@gmail.com",
       "id": 2
-    },
-    {
-      "fullname": "",
-      "email": "",
-      "password": "",
-      "age": "",
-      "mobile": "",
-      "id": 3
     }
   ],
-  "userlogin": [
-    {
-      "fullname": "",
-      "email": "",
-      "password": "",
-      "age": "",
-      "mobile": "",
-      "id": 1
-    }
-  ],
+  "userlogin": [],
   "vegetables": [],
   "fruits": [],
   "Coffee-tea": [],
@@ -40,6 +23,7 @@
       "cat_name": "potato",
       "quantity": "500",
       "price": 2,
+      "product_quantity": 1,
       "img": "potato.png"
     },
     {
@@ -48,6 +32,7 @@
       "cat_name": "apple",
       "quantity": "500",
       "price": 2,
+      "product_quantity": 1,
       "img": "apple.png"
     },
     {
@@ -56,6 +41,7 @@
       "cat_name": "banana",
       "quantity": "500",
       "price": 2,
+      "product_quantity": 1,
       "img": "banana.png"
     },
     {
@@ -64,6 +50,7 @@
       "cat_name": "carrot",
       "quantity": "500",
       "price": 2,
+      "product_quantity": 1,
       "img": "carrot.png"
     },
     {
@@ -72,6 +59,7 @@
       "cat_name": "orange",
       "quantity": "500",
       "price": 2,
+      "product_quantity": 1,
       "img": "orange.png"
     },
     {
@@ -80,6 +68,7 @@
       "cat_name": "strawberry",
       "quantity": "500",
       "price": 2,
+      "product_quantity": 1,
       "img": "strawberry.png"
     },
     {
@@ -88,6 +77,7 @@
       "cat_name": "tomato",
       "quantity": "500",
       "price": 2,
+      "product_quantity": 1,
       "img": "tomato.png"
     },
     {
@@ -96,33 +86,20 @@
       "cat_name": "brocoli",
       "quantity": "500",
       "price": 2,
+      "product_quantity": 1,
       "img": "brocoli.png"
     }
   ],
   "cart": [
     {
-      "id": 2,
-      "catagory": "Fruits",
-      "cat_name": "apple",
-      "quantity": "500",
-      "price": 2,
-      "img": "apple.png"
-    },
-    {
-      "id": 4,
+      "id": 1,
       "catagory": "vagetables",
-      "cat_name": "carrot",
+      "cat_name": "potato",
       "quantity": "500",
       "price": 2,
-      "img": "carrot.png"
-    },
-    {
-      "id": 5,
-      "catagory": "Fruits",
-      "cat_name": "orange",
-      "quantity": "500",
-      "price": 2,
-      "img": "orange.png"
+      "product_quantity": 10,
+      "img": "potato.png",
+      "product_quan": null
     }
   ]
 }
