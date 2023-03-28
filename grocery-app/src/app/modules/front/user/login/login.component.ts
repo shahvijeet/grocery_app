@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit{
       if(user){
         alert('login success !!');
         this.loginForm.reset();
+
+        localStorage.setItem("adminRegisteredData",JSON.stringify(user)) ;
         // localStorage.setItem("adminRegisteredData",JSON.stringify(user)) ;
         this.router.navigate(['front/user/profile']);
 }

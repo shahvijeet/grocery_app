@@ -24,39 +24,39 @@
         <div class="container">
             <div class="title">Profile</div>
             <div class="content">
-                <form >
+                <form (submit)="updateProfile()">
                     <div class="user-details">
                         <div class="input-box">
                             <span class="details">Full Name</span>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input class="form-control" [(ngModel)]="user.fullname" type="text" name="firstName" placeholder="Enter your name" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Username</span>
-                            <input type="text" placeholder="Enter your username" required>
+                            <input class="form-control" [(ngModel)]="user.lastname" type="text" name="lastName" placeholder="Enter your username" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Email</span>
-                            <input type="text" placeholder="Enter your email" required>
+                            <input class="form-control" [(ngModel)]="user.email" type="text" name="email" placeholder="Enter your email" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Contact Number</span>
-                            <input type="text" placeholder="Enter your number" required>
+                            <input class="form-control" [(ngModel)]="user.mobile" type="text" name="phone" placeholder="Enter your number" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Alternate Email</span>
-                            <input type="text" placeholder="Alternate Email" required>
+                            <input  class="form-control" [(ngModel)]="user.alternateEmail" type="text" name="Aemail" placeholder="Alternate Email" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Alternate Contact Number</span>
-                            <input type="text" placeholder="Alternate Contact Number" required>
+                            <input class="form-control" [(ngModel)]="user.alternatePhone" type="text" name="Aphone" placeholder="Alternate Contact Number" required>
                         </div>
                         <div class="input-box">
                             <span class="details">Birthdate</span>
-                            <input type="date" placeholder="" required>
+                            <input class="form-control" [(ngModel)]="user.birthDate" type="date" name="Birtday" id="Birtday" placeholder="" required>
                         </div>
                     </div>
                     <div class="button">
-                        <input type="button" value="SAVE">
+                        <button class="form-control btn btn-success">Save</button>
                     </div>
                 </form>
             </div>

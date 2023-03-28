@@ -1,4 +1,4 @@
-<div class="sticky-top">
+<!-- <div class="sticky-top"> -->
 <nav class="navbar navbar-expand navbar-dark bg-dark px-2 sticky-top">
     <div class="ccc text-light">
         <i class="fa-solid fa-bag-shopping"></i>
@@ -19,10 +19,18 @@
         <a routerLink="/cart" class="text-light " > Cart</a>
     </div>
 
-        <div class="user" >
-            <a class="navbar-brand px-4 " routerLink="/front/user/profile">USER</a>
-        </div> 
+        
 
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              USER
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" routerLink="./front/user/login">Log-in</a>
+                <a class="dropdown-item" routerLink="./front/user/registration">Registration</a>
+                
+            </div>
+          </div>
         <!-- <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               USER
@@ -30,12 +38,12 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" routerLink="/user/login">Log-in</a>
                 <a class="dropdown-item" href="/user/registration">Registration</a>
-                \
+                
             </div>
-          </div> -->
-          
+          </div>
+           -->
 </nav>
-<nav class="navbar navbar-light bg-light bg-transparent sticky-top">
+<nav class="navbar navbar-light bg-light bg-transparent">
     <a class="navbar-brand" routerLink="/catalog/category"><i class="fa-regular fa-grid-2"></i>All-Category</a>
   <form class="d-flex">
       <a class="navbar-brand"><i class="fa-solid fa-phone"></i><span>223-224-25</span>
@@ -43,7 +51,7 @@
   </form>
 </nav>
         
-</div>
+<!-- </div> -->
 
 
 

@@ -9,13 +9,35 @@
       "name": "Veer Shah",
       "email": "veer@gmail.com",
       "id": 2
+    },
+    {
+      "fullname": "qwef",
+      "lastname": "qwef",
+      "email": "qwef@gmail.com",
+      "mobile": 1111111111,
+      "age": "21",
+      "password": "123456",
+      "alternatePhone": "2222222222",
+      "alternateEmail": "qwe@gmail.com",
+      "birthDate": "2003-08-25",
+      "id": 3
+    },
+    {
+      "fullname": "vijeet",
+      "lastname": "Veer123",
+      "email": "vee@gmail.com",
+      "mobile": 1010101010,
+      "age": "21",
+      "password": "1478523",
+      "alternatePhone": "7412589630",
+      "alternateEmail": "vvvvv@gmail.com",
+      "birthDate": "2002-12-10",
+      "id": 4
     }
   ],
-  "userlogin": [],
-  "vegetables": [],
-  "fruits": [],
-  "Coffee-tea": [],
-  "meat": [],
+  "userlogin": [
+    {}
+  ],
   "fea_product": [
     {
       "id": 1,
@@ -109,6 +131,15 @@
       "price": 2,
       "product_quantity": 3,
       "img": "carrot.png"
+    },
+    {
+      "id": 2,
+      "catagory": "Fruits",
+      "cat_name": "apple",
+      "quantity": "500",
+      "price": 2,
+      "product_quantity": 2,
+      "img": "apple.png"
     }
   ]
 }
