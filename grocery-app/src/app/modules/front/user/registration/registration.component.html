@@ -5,13 +5,14 @@
 
 <div class="container">
     <div class="row">
+
         <div class="col-md-6">
             <div class="card1">
                 <div class="text-center">
                     <h1>Sign-Up</h1>
                     <h6>Register here</h6>
                 </div>
-                <form [formGroup]="signupForm" (ngSubmit)="signUp(signupForm.value)">
+                <form [formGroup]="signupForm" (ngSubmit)="signUp()">
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Full name</label>
                         <input formControlName="fullname" [ngClass]="{'is-invalid':submitted && signupForm.controls['fullname'].errors}" type="text" class="form-control" id="exampleInputPassword1">
@@ -28,6 +29,25 @@
                       </div>
                       
                       </div>
+<!-- ********************************************************************** -->
+<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Last name</label>
+    <input formControlName="lastname" [ngClass]="{'is-invalid':submitted && signupForm.controls['lastname'].errors}" type="text" class="form-control" id="exampleInputPassword1">
+    <div *ngIf="submitted && signupForm.controls['lastname'].errors" class="text-danger">
+      <div *ngIf="submitted && signupForm.controls['lastname'].errors['required'] ">
+          Enter a Name
+      </div>
+      <div *ngIf="submitted && signupForm.controls['lastname'].errors['minlength']">
+          Name should be greater than 4 letters
+      </div>
+      <div *ngIf="submitted && signupForm.controls['lastname'].errors['maxlength']">
+          Name should be less than 10 letters
+      </div>
+  </div>
+  
+  </div>
+<!-- ******************************************************************* -->
+
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <input formControlName="email" [ngClass]="{'is-invalid':submitted && signupForm.controls['email'].errors}" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -59,7 +79,27 @@
                       </div>
 
                       </div>
+
                       <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">User name</label>
+                        <input formControlName="username" [ngClass]="{'is-invalid':submitted && signupForm.controls['lastname'].errors}" type="text" class="form-control" id="exampleInputPassword1">
+                        <div *ngIf="submitted && signupForm.controls['username'].errors" class="text-danger">
+                          <div *ngIf="submitted && signupForm.controls['username'].errors['required'] ">
+                              Enter a Name
+                          </div>
+                          <div *ngIf="submitted && signupForm.controls['username'].errors['minlength']">
+                              Name should be greater than 4 letters
+                          </div>
+                          <div *ngIf="submitted && signupForm.controls['username'].errors['maxlength']">
+                              Name should be less than 10 letters
+                          </div>
+                      </div>
+                      
+                      </div>
+                    
+                      
+
+                      <!-- <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">age</label>
                         <input formControlName="age" [ngClass]="{'is-invalid':submitted && signupForm.controls['age'].errors}" type="text" class="form-control" id="exampleInputPassword1">
                         
@@ -72,10 +112,10 @@
                           </div>
                       </div>
 
-                      </div>
+                      </div> -->
                       <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Phone</label>
-                        <input formControlName="mobile" [ngClass]="{'is-invalid':submitted && signupForm.controls['mobile'].errors}" type="number" class="form-control" id="exampleInputPassword1">
+                        <input formControlName="mobile" [ngClass]="{'is-invalid':submitted && signupForm.controls['mobile'].errors}" type="text" class="form-control" id="exampleInputPassword1">
                         
                         <div *ngIf="submitted && signupForm.controls['mobile'].errors" class="text-danger">
                           <div *ngIf="submitted && signupForm.controls['mobile'].errors['required']">

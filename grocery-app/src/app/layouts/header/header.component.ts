@@ -7,8 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(private router:Router) { }
-  login(){
- this.router.navigate(['front/user/login']);
+userdata:any;
+  constructor(private router:Router) { 
+
+     const data=localStorage.getItem('adminRegisteredData');
+     if(data){
+       this.userdata=JSON.parse(data);
+     }
   }
-}
+  
+  logout(){
+    localStorage.removeItem('adminRegisteredData');
+    this.router.navigate(['./home']);
+  }
+
+  }
+

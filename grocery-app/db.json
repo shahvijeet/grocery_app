@@ -33,6 +33,18 @@
       "alternateEmail": "vvvvv@gmail.com",
       "birthDate": "2002-12-10",
       "id": 4
+    },
+    {
+      "fullname": "kalpesh",
+      "lastname": "kalp",
+      "email": "kalpesh@gmail.com",
+      "mobile": 1234569870,
+      "age": "21",
+      "password": "101010",
+      "alternatePhone": "7896541230",
+      "alternateEmail": "kalp@gmail.com",
+      "birthDate": "2011-11-11",
+      "id": 5
     }
   ],
   "userlogin": [
@@ -119,7 +131,7 @@
       "cat_name": "potato",
       "quantity": "500",
       "price": 2,
-      "product_quantity": 8,
+      "product_quantity": 2,
       "img": "potato.png",
       "product_quan": null
     },
@@ -138,8 +150,17 @@
       "cat_name": "apple",
       "quantity": "500",
       "price": 2,
-      "product_quantity": 2,
+      "product_quantity": 3,
       "img": "apple.png"
+    },
+    {
+      "id": 5,
+      "catagory": "Fruits",
+      "cat_name": "orange",
+      "quantity": "500",
+      "price": 2,
+      "product_quantity": 3,
+      "img": "orange.png"
     }
   ]
 }

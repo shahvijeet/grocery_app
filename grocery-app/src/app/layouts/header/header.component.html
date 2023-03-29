@@ -22,15 +22,32 @@
         
 
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              USER
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                <b *ngIf="userdata; else username">{{userdata.fullname}}</b>
+                <ng-template #username> 
+                    <h6 class="text-light">User</h6>
+                </ng-template>
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+               
+               <div class="dropdown-menu dm p-3 dd-menu" aria-labelledby="triggerId">
+                   <span *ngIf="userdata; else userbtn">
+                       <button class="btn btn-outline-success btn-sm rounded-2 my-1" ><a routerLink="./front/user/profile">Edit Profile</a></button> <br>
+                       <button class="dropdown-item di btn btn-danger my-"  (click)="logout()">LogOut</button>
+                       
+                    </span>
+                    <ng-template #userbtn>
+                        <span class="mx-2">
+                            <a class="dropdown-item" routerLink="./front/user/login">Log-in</a>
+                <a class="dropdown-item" routerLink="./front/user/registration">Registration</a>
+                        </span>
+                    </ng-template> 
+                </div>
+            </div>
+            <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" routerLink="./front/user/login">Log-in</a>
                 <a class="dropdown-item" routerLink="./front/user/registration">Registration</a>
                 
-            </div>
-          </div>
+            </div> -->
         <!-- <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               USER

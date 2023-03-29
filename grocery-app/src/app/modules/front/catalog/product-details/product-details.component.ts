@@ -36,6 +36,7 @@ export class ProductDetailsComponent {
       }
 
       addCart(){
+        
         let body=this.index[0];
       this.cartservice.addToCart(body).subscribe((response:any) => {
         console.log("response", response);

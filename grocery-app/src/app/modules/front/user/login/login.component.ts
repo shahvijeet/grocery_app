@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import{ FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FrontService } from 'src/app/service/front.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit{
 
 
   public loginForm !: FormGroup
-  constructor(private formBuilder : FormBuilder,private http : HttpClient,private router:Router) { }
+  constructor(private formBuilder : FormBuilder,private http : HttpClient,private router:Router,private front:FrontService) { }
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email:['',Validators.required],
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit{
 
   Userlogin(){
 
-    this.http.get<any>("http://localhost:3000/usersignup").subscribe(res=>{
+    this.front.usergetsignup().subscribe((res)=>{
+    // this.http.get<any>("http://localhost:3000/usersignup").subscribe(res=>{
       const user = res.find((a:any)=>{
           return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
       });console.log(user)

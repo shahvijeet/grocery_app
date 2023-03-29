@@ -1,14 +1,10 @@
 export interface UserModel{
-    fullname:string ,
-    lastname:string,
-    email: any,
-    mobile:number,
-    alternatePhone: number,
-    alternateEmail:any,
-    birthDate: Date,
-    age:number,
-    password:any,
-    id?:number
-
-
+    first_name:string,
+    last_name:string,
+    primary_email: string,
+    primary_mobile_number:number,
+    username:string,
+    password:string,
+    
+    
 }
