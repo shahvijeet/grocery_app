@@ -15,26 +15,29 @@ export class LoginComponent implements OnInit{
   constructor(private formBuilder : FormBuilder,private http : HttpClient,private router:Router,private front:FrontService) { }
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email:['',Validators.required],
+      username:['',Validators.required],
       password:['',Validators.required]
     })
   }
 
   Userlogin(){
+    const data=this.loginForm.getRawValue();
+    const body={
+      username:data.username, 
+      password:data.password
 
-    this.front.usergetsignup().subscribe((res)=>{
+    }
+    console.log(body);
+    
+    this.front.userlogin(body).subscribe((res)=>{
     // this.http.get<any>("http://localhost:3000/usersignup").subscribe(res=>{
-      const user = res.find((a:any)=>{
-          return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-      });console.log(user)
-      if(user){
-        alert('login success !!');
-        this.loginForm.reset();
-
-        localStorage.setItem("adminRegisteredData",JSON.stringify(user)) ;
+      console.log(res);
+      this.router.navigate(['front/user/profile']);
+        localStorage.setItem("adminRegisteredData",JSON.stringify(res)) ;
+        
         // localStorage.setItem("adminRegisteredData",JSON.stringify(user)) ;
-        this.router.navigate(['front/user/profile']);
+        // localStorage.setItem("adminRegisteredData",JSON.stringify(user)) ;
 }
-    })
+    )
   }
 }

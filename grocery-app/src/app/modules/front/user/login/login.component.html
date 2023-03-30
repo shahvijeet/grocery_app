@@ -13,14 +13,14 @@
                         </div>
                         <form [formGroup]="loginForm" (ngSubmit)="Userlogin()">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+                                <label for="exampleInputEmail1" class="form-label">USER NAME</label>
+                                <input formControlName="username" type="text" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                <div id="emailHelp" class="form-text">We'll never share your Data with anyone else.
                                 </div><br>
                                 <span class="text-danger"
-                                    *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">*Email
-                                    Id Is required</span>
+                                    *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')">*User
+                                    Name Is required</span>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>

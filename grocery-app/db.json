@@ -126,23 +126,14 @@
   ],
   "cart": [
     {
-      "id": 1,
-      "catagory": "vagetables",
-      "cat_name": "potato",
-      "quantity": "500",
-      "price": 2,
-      "product_quantity": 2,
-      "img": "potato.png",
-      "product_quan": null
-    },
-    {
-      "id": 4,
-      "catagory": "vagetables",
-      "cat_name": "carrot",
+      "id": 3,
+      "catagory": "Fruits",
+      "cat_name": "banana",
       "quantity": "500",
       "price": 2,
       "product_quantity": 3,
-      "img": "carrot.png"
+      "img": "banana.png",
+      "user_id": 3
     },
     {
       "id": 2,
@@ -150,8 +141,9 @@
       "cat_name": "apple",
       "quantity": "500",
       "price": 2,
-      "product_quantity": 3,
-      "img": "apple.png"
+      "product_quantity": 1,
+      "img": "apple.png",
+      "user_id": 3
     },
     {
       "id": 5,
@@ -159,17 +151,39 @@
       "cat_name": "orange",
       "quantity": "500",
       "price": 2,
-      "product_quantity": 3,
-      "img": "orange.png"
+      "product_quantity": 1,
+      "img": "orange.png",
+      "user_id": 3
     },
     {
-      "id": 7,
+      "id": 4,
       "catagory": "vagetables",
-      "cat_name": "tomato",
+      "cat_name": "carrot",
+      "quantity": "500",
+      "price": 2,
+      "product_quantity": 2,
+      "img": "carrot.png",
+      "user_id": 5
+    },
+    {
+      "id": 8,
+      "catagory": "vegetables",
+      "cat_name": "brocoli",
       "quantity": "500",
       "price": 2,
       "product_quantity": 1,
-      "img": "tomato.png"
+      "img": "brocoli.png",
+      "user_id": 4
+    },
+    {
+      "id": 1,
+      "catagory": "vagetables",
+      "cat_name": "potato",
+      "quantity": "500",
+      "price": 2,
+      "product_quantity": 1,
+      "img": "potato.png",
+      "user_id": 4
     }
   ]
 }

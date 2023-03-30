@@ -13,6 +13,7 @@ export class ProductDetailsComponent {
   index:any;
   name:any;
   isAddToCart:boolean=false;  
+  userid:any;
   constructor(private product:ProductsService,
     private route: ActivatedRoute,
     private cartservice:CartService){
@@ -36,10 +37,19 @@ export class ProductDetailsComponent {
       }
 
       addCart(){
-        
-        let body=this.index[0];
+         const data=localStorage.getItem('adminRegisteredData')
+         if(data){
+            const data1=JSON.parse(data)
+            this.userid=data1.id
+          }
+
+        let body = {
+          ...this.index[0],
+          "user_id": this.userid
+        };
       this.cartservice.addToCart(body).subscribe((response:any) => {
         console.log("response", response);
+        console.log("id", this.id);
       })
       this.isAddToCart=true
     }

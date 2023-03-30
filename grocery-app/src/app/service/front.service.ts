@@ -12,6 +12,7 @@ export class FrontService {
   userloginurl=environment.userlogin;
   mainurl=environment.URL;
   registerurl=environment.register;
+  loginurl=environment.login;
 
 constructor(private http:HttpClient)
   { }
@@ -19,9 +20,9 @@ constructor(private http:HttpClient)
     return this.http.post<UserModel>(this.mainurl+this.registerurl,data)
   }
   userlogin(data:any){
-    return this.http.post(this.baseurl+this.userloginurl,data)
+    return this.http.post(this.mainurl+this.loginurl,data)
   }
   usergetsignup(){
-    return this.http.get<any[]>(this.baseurl+this.usersignupurl)
+    return this.http.get<any[]>(this.mainurl+this.loginurl)
   }
 }

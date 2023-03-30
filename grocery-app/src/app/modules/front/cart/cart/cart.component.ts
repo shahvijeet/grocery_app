@@ -11,11 +11,20 @@ constructor(private cartservice:CartService){
   this.getCartData();
 }
 cartData:any;
-
+userid:any;
   getCartData(){
-    this.cartservice.getToCart().subscribe(res=>{
-      this.cartData=res      
-     })
+    const data=localStorage.getItem('adminRegisteredData')
+         if(data){
+            const data1=JSON.parse(data)
+            this.userid=data1.id
+          }
+      this.cartservice.getToCart().subscribe(res=>{
+        const cartArray = Object.values(res);
+        console.log(cartArray)
+      // this.cartData=cartArray.filter((item: { userId: string; }) => item.userId === this.userid);      
+        this.cartData=cartArray.filter((item: { user_id: string; }) => item.user_id === this.userid);
+    })
+
     }
 
     delCartData(id:any){
