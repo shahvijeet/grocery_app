@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit{
       console.log(res);
       this.router.navigate(['front/user/profile']);
         localStorage.setItem("adminRegisteredData",JSON.stringify(res)) ;
-        
+
         // localStorage.setItem("adminRegisteredData",JSON.stringify(user)) ;
         // localStorage.setItem("adminRegisteredData",JSON.stringify(user)) ;
 }
