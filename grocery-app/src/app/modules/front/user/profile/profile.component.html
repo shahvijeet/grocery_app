@@ -24,39 +24,59 @@
         <div class="container">
             <div class="title">Profile</div>
             <div class="content">
-                <form (submit)="updateProfile()">
+                <form [formGroup]="updateProfile" (submit)="update()">
                     <div class="user-details">
                         <div class="input-box">
-                            <span class="details">Full Name</span>
-                            <input class="form-control" [(ngModel)]="user.fullname" type="text" name="firstName" placeholder="Enter your name" required>
+                            <span class="details">First Name</span>
+                            <input formControlName="firstname" type="text" class="form-control"
+                                    id="exampleInputPassword1">
+                                <span class="text-danger"
+                                    *ngIf="updateProfile.controls['firstname'].dirty && updateProfile.hasError('required','firstname')">*Firstname
+                                    Is required</span>                        </div>
+                        <div class="input-box">
+                            <span class="details">Last name</span>
+                            <input formControlName="lastname" type="text" class="form-control"
+                                    id="exampleInputPassword1">
+                                <span class="text-danger"
+                                    *ngIf="updateProfile.controls['lastname'].dirty && updateProfile.hasError('required','lastname')">*Lastname
+                                    Is required</span>
                         </div>
                         <div class="input-box">
-                            <span class="details">Username</span>
-                            <input class="form-control" [(ngModel)]="user.lastname" type="text" name="lastName" placeholder="Enter your username" required>
+                            <span class="details">Secondary Email</span>
+                            <input formControlName="email" type="text" class="form-control"
+                                    id="exampleInputPassword1">
+                                <span class="text-danger"
+                                    *ngIf="updateProfile.controls['email'].dirty && updateProfile.hasError('required','email')">*Email
+                                    Is required</span>
                         </div>
                         <div class="input-box">
-                            <span class="details">Email</span>
-                            <input class="form-control" [(ngModel)]="user.email" type="text" name="email" placeholder="Enter your email" required>
+                            <span class="details"> Secondary Contact Number</span>
+                            <input formControlName="phone" type="text" class="form-control"
+                                    id="exampleInputPassword1">
+                                <span class="text-danger"
+                                    *ngIf="updateProfile.controls['phone'].dirty && updateProfile.hasError('required','phone')">*Phone
+                                    Is required</span>
                         </div>
+                        
                         <div class="input-box">
-                            <span class="details">Contact Number</span>
-                            <input class="form-control" [(ngModel)]="user.mobile" type="text" name="phone" placeholder="Enter your number" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Alternate Email</span>
-                            <input  class="form-control" [(ngModel)]="user.alternateEmail" type="text" name="Aemail" placeholder="Alternate Email" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Alternate Contact Number</span>
-                            <input class="form-control" [(ngModel)]="user.alternatePhone" type="text" name="Aphone" placeholder="Alternate Contact Number" required>
+                            <span class="details">Password</span>
+                            <input formControlName="password" type="password" class="form-control"
+                                    id="exampleInputPassword1">
+                                <span class="text-danger"
+                                    *ngIf="updateProfile.controls['password'].dirty && updateProfile.hasError('required','password')">*Password
+                                    Is required</span>
                         </div>
                         <div class="input-box">
                             <span class="details">Birthdate</span>
-                            <input class="form-control" [(ngModel)]="user.birthDate" type="date" name="Birtday" id="Birtday" placeholder="" required>
+                            <input formControlName="birthdate" type="date" class="form-control"
+                                    id="exampleInputPassword1">
+                                <span class="text-danger"
+                                    *ngIf="updateProfile.controls['birthdate'].dirty && updateProfile.hasError('required','birthdate')">*Birthdate
+                                    Is required</span>
                         </div>
                     </div>
                     <div class="button">
-                        <button class="form-control btn btn-success">Save</button>
+                        <input type="submit"  value="SAVE">
                     </div>
                 </form>
             </div>

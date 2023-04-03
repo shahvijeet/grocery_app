@@ -184,6 +184,15 @@
       "product_quantity": 1,
       "img": "potato.png",
       "user_id": 4
+    },
+    {
+      "id": 7,
+      "catagory": "vagetables",
+      "cat_name": "tomato",
+      "quantity": "500",
+      "price": 2,
+      "product_quantity": 3,
+      "img": "tomato.png"
     }
   ]
 }
