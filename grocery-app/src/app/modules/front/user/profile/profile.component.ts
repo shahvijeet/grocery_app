@@ -61,6 +61,12 @@ export class ProfileComponent implements OnInit{
       this.updateProfile.reset();
       
     }
+
+    logout() {
+      localStorage.removeItem('adminRegisteredData');
+      localStorage.removeItem('User_login_Token');
+      this.router.navigate(['./home']);
+    }
   }
 
     

@@ -16,7 +16,10 @@ export class TokenInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
   
       const token = localStorage.getItem('User_login_Token');
+      console.log("token",token);
       if (token) {
+        const tempTokon  = JSON.parse(token);
+        console.log("tempTokon",tempTokon);
         request = request.clone({
           setHeaders: {
             token: JSON.parse(token)

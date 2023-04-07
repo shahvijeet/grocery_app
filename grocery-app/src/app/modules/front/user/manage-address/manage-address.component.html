@@ -1,0 +1,65 @@
+
+<div>
+    <img src="/assets/address.png" class="img" alt="...">
+</div>
+<div class="main">
+    <div class="app">
+        <aside class="sidebar">
+            
+    
+            <nav class="menu">
+                <a routerLink="/front/user/profile" class="menu-item ">PROFILE</a>
+                <a routerLink="/front/user/orders" class="menu-item">ORDERS</a>
+                <a routerLink="/front/user/address" class="menu-item">ADD ADDRESS</a>
+                <a routerLink="/front/user/manageaddress" class="menu-item is-active">MANAGE ADDRESS</a>
+                <a routerLink="/front/user/password" class="menu-item">CHANGE PASSWORD</a>
+                <hr>
+                <a (click)="logout()" class="menu-item" style="margin-top: 100%;">LOG OUT</a>
+                <hr>
+            </nav>
+    
+        </aside>
+    
+        <main class="content">
+            <div class="container mt-3">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+                  <div class="col" *ngFor="let item of addresses;let i=index">
+                    <div class="card shadow-sm" >
+                      <div class="card-body">
+                        <h5 class="card-title fs-5"><span class="text-success">Address Tag :</span> {{item.tag}}</h5>
+                        <p class="card-text fs-6">{{item.address_line_1}}</p>
+                        <p class="card-text fs-6">{{item.address_line_2}}</p>
+                        <p class="card-text fs-6">Country: {{item.country}}</p>
+                        <p class="card-text fs-6">State: {{item.state}}</p>
+                        <p class="card-text fs-6">City: {{item.city}}</p>
+                        <p class="card-text fs-6">Landmark : {{item.landmark}}</p>
+                        <p class="card-text fs-6">Postal Code : {{item.postal_code}}</p>
+                        
+                        
+                        <div class="text-center card-footer bg-transparent border-0">
+                          <button class="btn btn-outline-dark">DELIVER HERE</button>
+                          <button class="btn btn-outline-transparent" ><img src="https://img.icons8.com/cute-clipart/32/null/delete-forever.png" (click)="delete_add(item.id)"/></button>
+                          <button class="btn btn-outline-transparent"><img src="https://img.icons8.com/cute-clipart/32/null/pencil.png" [routerLink]="['/front/user/editaddress',item.id]" routerLinkActive="router-link-active" /></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <!-- Add more cards here using ngFor -->
+              
+                </div>
+              </div>
+              
+              
+
+            <!-- <div *ngFor="let address of addresses">
+                <p>{{ address.address_line_1 }}</p>
+                <p>{{ address.address_line_2 }}</p>
+                <p>{{ address.area }}</p>
+             other address fields
+             (click)="Delete_Address(i,item.id)"
+              </div> -->
+
+        </main>
+    </div>
+    

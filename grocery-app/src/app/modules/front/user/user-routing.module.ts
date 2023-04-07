@@ -7,14 +7,17 @@ import { ProfileComponent } from './profile/profile.component';
 import { ChangePassComponent } from './change-pass/change-pass.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthGuard } from 'src/app/shared/guard/auth.guard';
+import { ManageAddressComponent } from './manage-address/manage-address.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'registration',component:RegistrationComponent},
   {path:'profile',component:ProfileComponent , canActivate: [AuthGuard]},
   {path:'orders',component:OrderComponent ,  canActivate: [AuthGuard]},
-  {path:'manageaddress',component:AddressComponent , canActivate: [AuthGuard]},
-  {path:'password',component:ChangePassComponent , canActivate: [AuthGuard]}
+  {path:'address',component:AddressComponent , canActivate: [AuthGuard]},
+  {path:'manageaddress',component:ManageAddressComponent , canActivate: [AuthGuard]},
+  {path:'password',component:ChangePassComponent , canActivate: [AuthGuard]},
+  {path:'editaddress/:id',component:AddressComponent , canActivate: [AuthGuard]}
 ];
 
 @NgModule({

@@ -8,6 +8,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { OrderComponent } from './order/order.component';
 import { AddressComponent } from './address/address.component';
 import { ChangePassComponent } from './change-pass/change-pass.component';
+import { ManageAddressComponent } from './manage-address/manage-address.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ChangePassComponent } from './change-pass/change-pass.component';
     RegistrationComponent,
     OrderComponent,
     AddressComponent,
-    ChangePassComponent
+    ChangePassComponent,
+    ManageAddressComponent
   ],
   imports: [
     CommonModule,

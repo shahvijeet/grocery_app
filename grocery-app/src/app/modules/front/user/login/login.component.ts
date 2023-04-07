@@ -29,12 +29,15 @@ export class LoginComponent implements OnInit{
       
     }
     console.log(body);
-    this.front.userlogin(body).subscribe((res)=>{
-      if(res){
+    this.front.userlogin(body).subscribe({
+      next:(res)=>{
+      console.log("loginres",res);
+     
+        
         this.User_login_Token=res;
-        console.log(this.User_login_Token);
-        localStorage.setItem('User_login_Token',JSON.stringify(this.User_login_Token.data));              
-      }
+        console.log(this.User_login_Token.data.token);
+        localStorage.setItem('User_login_Token',JSON.stringify(this.User_login_Token.data.token));              
+   
     // this.http.get<any>("http://localhost:3000/usersignup").subscribe(res=>{
       console.log(res);
       this.router.navigate(['front/user/profile']);
@@ -42,7 +45,12 @@ export class LoginComponent implements OnInit{
         sessionStorage.setItem("adminRegisteredData",JSON.stringify(res)) ;
         // localStorage.setItem("adminRegisteredData",JSON.stringify(user)) ;
         // localStorage.setItem("adminRegisteredData",JSON.stringify(user)) ;
+},
+error:(err) => {
+  console.error(err);
+  alert("Credentials is incorrect.");
 }
-    )
+
+})
   }
 }
