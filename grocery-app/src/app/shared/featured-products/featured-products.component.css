@@ -37,3 +37,6 @@ img{
     background-color: white;
     color: green;
 }
+carousel{
+    z-index: 25;
+    }

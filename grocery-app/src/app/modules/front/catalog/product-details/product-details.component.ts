@@ -18,7 +18,7 @@ export class ProductDetailsComponent {
     private route: ActivatedRoute,
     private cartservice:CartService){
   
-    this.getData()
+    // this.getData()
   }
   
   ngOnInit() {
@@ -28,13 +28,13 @@ export class ProductDetailsComponent {
     });
   }
   
-    getData(){
-      this.product.getProduct().subscribe(res=>{
-        this.index= res.filter(ele=>ele.cat_name === this.name)
-        //console.log(this.index)
+    // getData(){
+    //   this.product.getProduct().subscribe(res=>{
+    //     this.index= res.filter(ele=>ele.cat_name === this.name)
+    //     //console.log(this.index)
         
-       })
-      }
+    //    })
+    //   }
 
       addCart(){
          const data=localStorage.getItem('adminRegisteredData')

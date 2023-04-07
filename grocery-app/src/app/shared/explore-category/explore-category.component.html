@@ -41,7 +41,8 @@
     <div class="carousel-cell" *ngFor="let product of Items">
         <div
             class="card bg-transparent p-3 m-2" >
-            <img src="{{product.image}}" alt="" width="120" height="120"/>
+            <img src="{{product.image}}" alt="" width="120" height="120"
+            [routerLink]="['/front/catalog/product-list', product.id]"/>
             <div class="card-body text-center">
                 <h4>{{product.title }}</h4>
                 <small>{{product.parent_id}}</small>

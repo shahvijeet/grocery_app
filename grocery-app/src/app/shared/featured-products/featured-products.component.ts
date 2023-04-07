@@ -7,9 +7,8 @@ import { ProductsService } from 'src/app/service/products.service';
   styleUrls: ['./featured-products.component.css']
 })
 export class FeaturedProductsComponent {
-  products:any;
-  cartservice: any;
-  
+  product_items: any = [];
+  Items:any= [];
 
 constructor(private product:ProductsService){
 
@@ -18,15 +17,23 @@ constructor(private product:ProductsService){
 ngOnInit(){}
 
 getData(){
-  this.product.getProduct().subscribe(res=>{
-    this.products=res
-   })
+  this.product.getproduct().subscribe({
+    next:(res)=>{
+    this.product_items=res
+    this.Items=this.product_items.data
+    console.log("items",this.Items);
+    },
+    error:(err)=>{
+      console.error(err);
+    }
+    })
   }
-  addToCart(id:any){
-    const body= this.products.filter((ele: { id: any; })=>ele.id === id)
-
-        this.cartservice.addToCart(body[0]).subscribe((prod:any) => {
-          
-        })
-  }
+  Add_cart(id:any){}
 }
+  // addToCart(id:any){
+  //   const body= this.product_items.filter((ele: { id: any; })=>ele.id === id)
+
+  //       this.cartservice.addToCart(body[0]).subscribe((prod:any) => {
+          
+  //       })
+  // }

@@ -15,4 +15,6 @@ export const environment = {
     deleteaddess:'customer/delete-customer-address',
     editaddress:'customer/update-customer-address',
     encryption:'encryption',
+    product:'product/get-all-products',
+    productsbycategoryid:'/product/get-product-by-category-id',
 };
