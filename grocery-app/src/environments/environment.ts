@@ -17,4 +17,5 @@ export const environment = {
     encryption:'encryption',
     product:'product/get-all-products',
     productsbycategoryid:'/product/get-product-by-category-id',
+    productbyid:'product/get-product-by-id',
 };

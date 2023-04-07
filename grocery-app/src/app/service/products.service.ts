@@ -13,11 +13,17 @@ export class ProductsService {
    baseurl=environment.URL;
    producturl=environment.product;
    getproductbycategoryidurl=environment.productsbycategoryid;
+    productbyidurl=environment.productbyid;
 
    getproductbycategory(id:any){
       return this.http.get(this.baseurl+this.getproductbycategoryidurl,{headers: new HttpHeaders({'ngrok-skip-browser-warning': 'skip-browser-warning', 
       'Access-Control-Allow-Origin': '*','category_id':id})})
    }
+
+   getproductbyid(id:any){
+    return this.http.get(this.baseurl+this.productbyidurl,{headers: new HttpHeaders({'ngrok-skip-browser-warning': 'skip-browser-warning',
+    'Access-Control-Allow-Origin': '*','product_id':id})})
+    }
    
   getproduct(){
     return this.http.get(this.baseurl+this.producturl,{headers: new HttpHeaders({'ngrok-skip-browser-warning': 'skip-browser-warning', 

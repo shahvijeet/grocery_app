@@ -11,11 +11,12 @@ import { ProductsService } from 'src/app/service/products.service';
 export class ProductListComponent implements OnInit {
 
 
-  constructor(private router:Router,private route:ActivatedRoute,private productservice:ProductsService,private encrypt:EncryptionService) { }
+  constructor(private router:Router,private route:ActivatedRoute,private productservice:ProductsService,
+    private encrypt:EncryptionService) { }
 
 filteritem:any=[];
 
-encryptdata:string = "";
+
   getproductlist(encryption:any){
     this.productservice.getproductbycategory(encryption).subscribe({
       next:(res:any)=>{
