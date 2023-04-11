@@ -16,17 +16,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let p_details of cartData;let i=index">
-        <td>{{p_details.quantity}}g  {{p_details.cat_name}}</td>
-        <td>{{p_details.price |currency }}</td>
+      <tr *ngFor="let p_details of cart.items;let i=index">
+        <td> {{p_details.product.title}}</td>
+        <td>{{p_details.product.amount |currency }}</td>
         <td> <div>
-            <button class="btn" (click)="subQuantity(p_details.id,i)">-</button>
-            <span>{{p_details.product_quantity}}</span>
-            <button class="btn" (click)="addQuantity(p_details.id,i)">+</button>
+            <button class="btn" (click)="subQuantity(p_details.product.id)">-</button>
+            <span>{{p_details.quantity}}</span>
+            <button class="btn" (click)="addQuantity(p_details.product.id)">+</button>
     </div></td>
-    <td>{{p_details.product_quantity * p_details.price}}</td>
+    <td>{{p_details.quantity * p_details.product.amount|currency}}</td>
     <td>
-       <i type="button" class="fa-solid fa-trash" (click)="delCartData(p_details.id)"></i>
+       <i type="button" class="fa-solid fa-trash" (click)="deleteItem(p_details.product.id)"></i>
     </td>
       </tr>
     </tbody>
@@ -37,7 +37,7 @@
        <table class="table">
     <tr>
     <th>Sub TOTAL</th>
-    <th>{{total()}}</th>
+    <th>{{getCartTotal()|currency}}</th>
   </tr>
   <tr>
     <th>Delivary Charges</th>
@@ -45,7 +45,7 @@
   </tr>
   <tr>
     <th>Grand Total</th>
-    <th>{{total()}}</th>
+    <th>{{getCartTotal()|currency}}</th>
   </tr>
   </table>
   <a routerLink="/cart/checkout" class="btn btn-primary">Checkout</a>

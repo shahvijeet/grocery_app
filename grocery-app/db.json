@@ -191,7 +191,7 @@
       "cat_name": "tomato",
       "quantity": "500",
       "price": 2,
-      "product_quantity": 2,
+      "product_quantity": 4,
       "img": "tomato.png"
     }
   ]

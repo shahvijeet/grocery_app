@@ -36,22 +36,22 @@ export class ProductDetailsComponent {
     //    })
     //   }
 
-      addCart(){
-         const data=localStorage.getItem('adminRegisteredData')
-         if(data){
-            const data1=JSON.parse(data)
-            this.userid=data1.id
-          }
+    //   addCart(){
+    //      const data=localStorage.getItem('adminRegisteredData')
+    //      if(data){
+    //         const data1=JSON.parse(data)
+    //         this.userid=data1.id
+    //       }
 
-        let body = {
-          ...this.index[0],
-          "user_id": this.userid
-        };
-      this.cartservice.addToCart(body).subscribe((response:any) => {
-        console.log("response", response);
-        console.log("id", this.id);
-      })
-      this.isAddToCart=true
-    }
+    //     let body = {
+    //       ...this.index[0],
+    //       "user_id": this.userid
+    //     };
+    //   this.cartservice.addToCart(body).subscribe((response:any) => {
+    //     console.log("response", response);
+    //     console.log("id", this.id);
+    //   })
+    //   this.isAddToCart=true
+    // }
 
 }

@@ -7,8 +7,12 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CartService {
-  baseurl=environment.baseurl;
-  carturl=environment.cart;
+  
+  baseurl=environment.URL;
+  addtocarturl=environment.addorder;
+  carturl=environment.getorderbyid;
+
+
   constructor(private http:HttpClient) { }
 
 getToCart(){
@@ -16,7 +20,7 @@ getToCart(){
 }
 
   addToCart(body:any):Observable<any[]>{
-    return this.http.post<any[]>(this.baseurl+this.carturl,body)
+    return this.http.post<any[]>(this.baseurl+this.addtocarturl,body)
    }
 
    delToCart(id:any){

@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit {
           next:(res) => {
         console.log("123456",res);
         this.userdata = res;
+        localStorage.setItem('customerId', JSON.stringify(this.userdata.data.id));
       },
       error:(err) => {  
         console.error(err);
