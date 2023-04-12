@@ -28,7 +28,7 @@
                         <div class="user-details">
                             <div class="input-box">
                                 <span class="details">CURRENT PASSWORD</span>
-                                <input formControlName="oldpass" type="text" class="form-control" id="exampleInputEmail1"
+                                <input formControlName="oldpass" type="password" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp">
                                 <span class="text-danger"
                                     *ngIf="changePassword.controls['oldpass'].dirty && changePassword.hasError('required','oldpass')">*User
@@ -36,7 +36,7 @@
                             </div>
                             <div class="input-box">
                                 <span class="details">NEW PASSWORD</span>
-                                <input formControlName="newpass" type="text" class="form-control" id="exampleInputEmail1"
+                                <input formControlName="newpass" type="password" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp">
                                 <span class="text-danger"
                                     *ngIf="changePassword.controls['newpass'].dirty && changePassword.hasError('required','newpass')">*Enter
@@ -44,7 +44,7 @@
                             </div>
                             <div class="input-box">
                                 <span class="details">CONFIRM NEW PASSWORD</span>
-                                <input formControlName="confirmpass" type="text" class="form-control" id="exampleInputEmail1"
+                                <input formControlName="confirmpass" type="password" class="form-control" id="exampleInputEmail1"
                                         aria-describedby="emailHelp">
                                 <span class="text-danger"
                                     *ngIf="changePassword.controls['confirmpass'].dirty && changePassword.hasError('required','confirmpass')">*Enter

@@ -14,6 +14,7 @@ export class ChangePassComponent implements OnInit {
 
   constructor(private formBuilder : FormBuilder,private http:HttpClient,private router:Router,private changepassword:ChangepasswordService){}
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.changePassword = this.formBuilder.group({
       oldpass:['',Validators.required],
       newpass:['',Validators.required],

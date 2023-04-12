@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import{ FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FrontService } from 'src/app/service/front.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,8 +14,9 @@ export class LoginComponent implements OnInit{
   
   User_login_Token: any 
   public loginForm !: FormGroup
-  constructor(private formBuilder : FormBuilder,private http : HttpClient,private router:Router,private front:FrontService) { }
+  constructor(private formBuilder : FormBuilder,private http : HttpClient,private router:Router,private front:FrontService,private toast:ToastrService) { }
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.loginForm = this.formBuilder.group({
       username:['',Validators.required],
       password:['',Validators.required]
@@ -32,6 +34,7 @@ export class LoginComponent implements OnInit{
     this.front.userlogin(body).subscribe({
       next:(res)=>{
       console.log("loginres",res);
+      this.toast.success("Login Successfully");
      
         
         this.User_login_Token=res;

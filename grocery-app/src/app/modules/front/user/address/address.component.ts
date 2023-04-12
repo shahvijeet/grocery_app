@@ -24,7 +24,7 @@ export class AddressComponent implements OnInit {
               private encrypt:EncryptionService) { }
 
   ngOnInit(): void {
-
+    window.scrollTo(0, 0);
 
     this.route.paramMap.subscribe((params:any)=>{
       this.address_id = params.get('id');

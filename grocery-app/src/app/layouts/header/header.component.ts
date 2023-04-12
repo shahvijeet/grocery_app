@@ -12,23 +12,27 @@ export class HeaderComponent implements OnInit {
   
   constructor(private router: Router, private user: UpdateprofileService) { 
     
+  }
+  
+  ngOnInit(): void {
+    this.router.events.subscribe((res:any) => {
+    if(res.url){
+      this.user.getprofile().subscribe({
+            next:(res) => {
+          //console.log("123456",res);
+          this.userdata = res;
+          localStorage.setItem('customerId', JSON.stringify(this.userdata.data.id));
+        },
+        error:(err) => {  
+          console.error(err);
+          
+        }
+      });
     // const data = localStorage.getItem('adminRegisteredData');
     // if (data) {
-      //   this.userdata = JSON.parse(data);
-    }
-    
-    ngOnInit(): void {
-         this.user.getprofile().subscribe({
-          next:(res) => {
-        console.log("123456",res);
-        this.userdata = res;
-        localStorage.setItem('customerId', JSON.stringify(this.userdata.data.id));
-      },
-      error:(err) => {  
-        console.error(err);
-        
-      }
-    });
+    //     this.userdata = JSON.parse(data);}
+     }
+  })
   }
     
     // }

@@ -17,6 +17,11 @@ import { ExploreCategoryComponent } from './shared/explore-category/explore-cate
 import { FeaturedProductsComponent } from './shared/featured-products/featured-products.component';
 import { OtherDataComponent } from './shared/other-data/other-data.component';
 import { TokenInterceptor } from './shared/interceptor/token.interceptor';
+import { NgxUiLoaderModule,NgxUiLoaderHttpModule } from "ngx-ui-loader";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +43,16 @@ import { TokenInterceptor } from './shared/interceptor/token.interceptor';
    ReactiveFormsModule,
     HttpClientModule,
     FrontModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
+    
   
   ],
   providers: [{

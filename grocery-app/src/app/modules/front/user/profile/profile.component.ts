@@ -27,6 +27,7 @@ export class ProfileComponent implements OnInit{
               private updateservice:UpdateprofileService){ }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.updateProfile = this.formBuilder.group({
       firstname:['',Validators.required],
       lastname:['',Validators.required],

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/app/service/cart.service';
 import { EncryptionService } from 'src/app/service/encryption.service';
 import { ProductsService } from 'src/app/service/products.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-decs',
@@ -13,7 +14,7 @@ export class ProductDecsComponent implements OnInit {
 
   constructor(private router:Router,private route:ActivatedRoute,
     private productservice:ProductsService,private encrypt:EncryptionService,
-    private cartservice:CartService) { }
+    private cartservice:CartService,private toastr:ToastrService) { }
     filteritem:any=[];
     isaddToCart:boolean=false;
 
@@ -21,7 +22,7 @@ export class ProductDecsComponent implements OnInit {
     addToCart(product: any) {
       const quantityInput = document.getElementById('quantity') as HTMLInputElement;
       const quantity = parseInt(quantityInput.value);
-  
+      this.toastr.success('Product added to cart successfully');
       if (quantity >= 1) {
         // Perform action to add product to cart
         console.log(`Added ${quantity} ${product.title}(s) to cart!`);
@@ -45,13 +46,13 @@ export class ProductDecsComponent implements OnInit {
        // Increment the quantity of the existing item
        alert(`${product.title} is already in your cart.`);
       //  existingItem.quantity += quantity;
-      this.isaddToCart=true;
     } 
     else {
-       // Add new item to cart
-       const item = {product: product, quantity: quantity};
-       cart.items.push(item);
-     }   
+      // Add new item to cart
+      const item = {product: product, quantity: quantity};
+      cart.items.push(item);
+    }   
+    this.isaddToCart=true;
     // Save updated cart data to local storage
     localStorage.setItem('cartData', JSON.stringify(cart));
 
@@ -90,6 +91,7 @@ export class ProductDecsComponent implements OnInit {
       }
     
       ngOnInit(): void {
+        window.scrollTo(0, 0);
         this.route.paramMap.subscribe((params:any)=>{
           console.log(params.get('id'));
           this.encryption(params.get('id'));

@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+// import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
   cart:any
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+  }
   constructor(){
     // this.getCartData();
 
@@ -34,7 +38,7 @@ export class CartComponent {
             subQuantity(Id: any) {
                     this.cart.items.forEach((item: { product: any; quantity: number; }) => {
                       if (item.product.id === Id) {
-                        if (item.quantity > 0){
+                        if (item.quantity > 1){
                         item.quantity--;
                         localStorage.setItem('cartData', JSON.stringify(this.cart));
               //           this.products=this.cartData[i]

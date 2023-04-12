@@ -18,6 +18,7 @@ export class RegistrationComponent implements OnInit{
   constructor(private front:FrontService, private formBuider : FormBuilder, private http : HttpClient, private router:Router) { }
   
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.signupForm = this.formBuider.group({
 
       fullname:['',[Validators.required,Validators.minLength(4),Validators.maxLength(10)]],

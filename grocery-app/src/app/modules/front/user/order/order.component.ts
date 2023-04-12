@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,9 +6,11 @@ import { Router } from '@angular/router';
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
 })
-export class OrderComponent {
+export class OrderComponent implements OnInit{
 constructor(private router:Router) { }
-
+ngOnInit(): void {
+    window.scrollTo(0, 0);
+}
 logout() {
   localStorage.removeItem('adminRegisteredData');
   localStorage.removeItem('User_login_Token');

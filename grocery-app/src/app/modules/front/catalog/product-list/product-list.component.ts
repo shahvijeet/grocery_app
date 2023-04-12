@@ -45,6 +45,7 @@ filteritem:any=[];
   }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
     this.route.paramMap.subscribe((params:any)=>{
       console.log(params.get('id'));
       this.encryption(params.get('id'));

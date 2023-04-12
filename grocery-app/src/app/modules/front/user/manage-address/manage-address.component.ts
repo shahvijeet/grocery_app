@@ -15,7 +15,7 @@ export class ManageAddressComponent implements OnInit {
   constructor(private router:Router, private address:AddressService , private encrypt:EncryptionService) { }
 
   ngOnInit() {
-
+    window.scrollTo(0, 0);
     this.address.manageaddress().subscribe({
       next:(res:any)=>{
         console.log(res); // log the entire response object
