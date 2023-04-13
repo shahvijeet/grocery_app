@@ -44,7 +44,8 @@ export class ProductDecsComponent implements OnInit {
      const existingItem = cart.items.find((item: { product: { id: any; }; }) => item.product.id === product.id);
      if (existingItem) {
        // Increment the quantity of the existing item
-       alert(`${product.title} is already in your cart.`);
+      //  alert(`${product.title} is already in your cart.`);
+      this.toastr.warning(`${product.title} is already in your cart.`);
       //  existingItem.quantity += quantity;
     } 
     else {
@@ -59,7 +60,8 @@ export class ProductDecsComponent implements OnInit {
       } 
       else {
         // Display error message or prevent button action
-      alert('Please enter a quantity of at least 1.');
+      // alert('Please enter a quantity of at least 1.');
+      this.toastr.warning('Please enter a quantity of at least 1.');
       }
     }
 

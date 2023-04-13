@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AddressService } from 'src/app/service/address.service';
 import { EncryptionService } from 'src/app/service/encryption.service';
 
@@ -12,7 +13,8 @@ import { EncryptionService } from 'src/app/service/encryption.service';
 export class ManageAddressComponent implements OnInit {
   addresses: any[] = [];
 
-  constructor(private router:Router, private address:AddressService , private encrypt:EncryptionService) { }
+  constructor(private router:Router, private address:AddressService , 
+    private encrypt:EncryptionService,private toast:ToastrService) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
@@ -53,6 +55,8 @@ deleteaddress(encryption:any){
       console.log(res);
       this.addresses = res.data.addresses;
       console.log(this.addresses);
+      confirm("Are you sure you want to delete this address?");
+      this.toast.success("Address Deleted Successfully")
     }
   })
 }

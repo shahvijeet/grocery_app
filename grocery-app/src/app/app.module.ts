@@ -48,7 +48,7 @@ import { ToastrModule } from 'ngx-toastr';
     NgxUiLoaderHttpModule.forRoot({ showForeground: true }),
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 10000,
+      timeOut: 3000,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),

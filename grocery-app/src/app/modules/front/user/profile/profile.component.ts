@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UpdateprofileService } from 'src/app/service/updateprofile.service';
 
 @Component({
@@ -24,7 +25,8 @@ export class ProfileComponent implements OnInit{
   constructor(private http: HttpClient,
               private router:Router,
               private formBuilder : FormBuilder,
-              private updateservice:UpdateprofileService){ }
+              private updateservice:UpdateprofileService,
+              private toast:ToastrService){ }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
@@ -51,11 +53,13 @@ export class ProfileComponent implements OnInit{
       this.updateservice.updateprofile(body).subscribe((res)=>{
         console.log(res);
         this.router.navigate(['front/user/profile']);
-        alert("Profile Updated Successfully");
+        // alert("Profile Updated Successfully");
+        this.toast.success("Profile Updated Successfully");
       },
       (err) => {
         console.error(err);
-        alert("Something went wrong");
+        // alert("Something went wrong");
+        this.toast.error("Something went wrong");
       }
     
       );
@@ -71,37 +75,7 @@ export class ProfileComponent implements OnInit{
   }
 
     
-  //   const data=localStorage.getItem("adminRegisteredData");
-  //   if(data!=null){
-  //   this.userdata=JSON.parse(data);
-  //   console.log(this.userdata);
-  //   }
-  //   this.http.get<any>(`http://localhost:3000/usersignup/${this.userdata.id}`).subscribe(data => {
-  //     this.user = {
-  //       fullname: data.fullname,
-  //       lastname:data.lastname,
-  //       email: data.email,
-  //       mobile: data.mobile,
-  //       age:data.age,
-  //       password:data.password,
-  //       alternatePhone: data.alternatePhone || '',
-  //       alternateEmail: data.alternateEmail || '',
-  //       birthDate:data.birthDate || ''
-  //     };
-  //   });
-  // }
 
-  // updateProfile() {
-  //   if (!this.user.alternatePhone || !this.user.alternateEmail || !this.user.birthDate) {
-  //     alert('Please fill in missing fields.');
-  //     return;
-  //   }
-
-  //   this.http.put(`http://localhost:3000/usersignup/${this.userdata.id}`, this.user).subscribe(data => {
-  //     alert('Profile updated successfully.');
-  //   });
-
-  // }
 
 
 

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AddressService } from 'src/app/service/address.service';
 import { EncryptionService } from 'src/app/service/encryption.service';
 
@@ -21,7 +22,8 @@ export class AddressComponent implements OnInit {
               private http:HttpClient,
               private formBuilder : FormBuilder,
               private address:AddressService,
-              private encrypt:EncryptionService) { }
+              private encrypt:EncryptionService,
+              private toast:ToastrService) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
@@ -46,46 +48,17 @@ export class AddressComponent implements OnInit {
           "postal_code": this.User_address_data[0].postal_code,
           "landmark": this.User_address_data[0].landmark,
           "tag": this.User_address_data[0].tag});
+          this.toast.success("Address Updated Successfully")
           },
           error:(err:any)=>{
             console.log(err);
+            this.toast.error("Something went wrong")
           }
         })
         this.Address_btn="EDIT Address"
       }
     })
 
-
-
-
-    // this.address.manageaddress().subscribe({
-    //   next:(res:any)=>{
-    //     console.log(res); // log the entire response object
-    //     const address = res.data.addresses[0]; // assuming you want to display only the first address
-    //     this.User_Address_Add.setValue({
-    //       address_line_1: address.address_line_1,
-    //       address_line_2: address.address_line_2,
-    //       area: address.area,
-    //       city: address.city,
-    //       state: address.state,
-    //       country: address.country,
-    //       postal_code: address.postal_code,
-    //       landmark: address.landmark,
-    //       tag: address.tag,
-    //     });
-    //      // added missing closing bracket
-    //   },
-    //   error:(err)=>{
-    //     console.log(err);
-    //   }
-    // })
-    
-    // this.Address_btn="EDIT Address"
-
-
-    
-    
-    
     this.User_Address_Add = this.formBuilder.group({
              
               address_line_1:new FormControl ("",[
@@ -141,12 +114,15 @@ export class AddressComponent implements OnInit {
               if (this.User_Address_Add.valid) {
                 this.address.addaddress(this.User_Address_Add.value).subscribe((data: any) => {
                   console.log(data);
-                  alert("Address Added Successfully");
-                  // this.router.navigate(['./user/address']);
+                  // alert("Address Added Successfully");
+                  this.toast.success("Address Added Successfully");
+                  this.User_Address_Add.reset();
+                  this.router.navigate(['/front/user/manageaddress']);
                 },
                 (err) => {
                   console.log(err);
-                  alert("something went wrong");
+                  // alert("something went wrong");
+                  this.toast.error("something went wrong");
                 });
               }
             } else {

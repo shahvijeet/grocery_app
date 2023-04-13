@@ -14,7 +14,10 @@ export class LoginComponent implements OnInit{
   
   User_login_Token: any 
   public loginForm !: FormGroup
-  constructor(private formBuilder : FormBuilder,private http : HttpClient,private router:Router,private front:FrontService,private toast:ToastrService) { }
+  constructor(private formBuilder : FormBuilder,
+    private http : HttpClient,
+    private router:Router,
+    private front:FrontService,private toast:ToastrService) { }
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.loginForm = this.formBuilder.group({
@@ -51,7 +54,8 @@ export class LoginComponent implements OnInit{
 },
 error:(err) => {
   console.error(err);
-  alert("Credentials is incorrect.");
+  // alert("Credentials is incorrect.");
+  this.toast.error("Credentials is incorrect.");
 }
 
 })

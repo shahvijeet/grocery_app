@@ -4,6 +4,7 @@ import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FrontService } from 'src/app/service/front.service';
 import { UserModel } from 'src/app/models/user.model';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class RegistrationComponent implements OnInit{
   public signupForm !: FormGroup;
   submitted =false;
   
-  constructor(private front:FrontService, private formBuider : FormBuilder, private http : HttpClient, private router:Router) { }
+  constructor(private front:FrontService, private formBuider : FormBuilder, 
+    private http : HttpClient, private router:Router,private toast:ToastrService) { }
   
   ngOnInit(): void {
     window.scrollTo(0, 0);
@@ -60,24 +62,19 @@ export class RegistrationComponent implements OnInit{
         if(this.signupForm.invalid){
               return
         }
-        this.front.usersignup(data).subscribe((res)=>{
-          alert("Signup Successfull");
-       this.signupForm.reset();
-       this.router.navigate(['user/login']);
-        }
-// },err=>{
-//   alert("Something went wrong")
-// }
-)
-        
-//          this.http.post<any>("http://localhost:3000/usersignup",this.signupForm.value)
-//     .subscribe(res=>{
-//       alert("Signup Successfull");
-//        this.signupForm.reset();
-//        this.router.navigate(['user/login']);
+        this.front.usersignup(data).subscribe(
+          (res) => {
+            // Handle successful response
+            this.toast.success("Signup Successfull");
+            this.signupForm.reset();
+            this.router.navigate(['user/login']);
+          },
+          (error) => {
+            // Handle error
+            console.log(error);
+            this.toast.error("Signup Failed");
+          }
 
-// },err=>{
-//   alert("Something went wrong")
-// })
-}
-}
+          );
+        }
+      }

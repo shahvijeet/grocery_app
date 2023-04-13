@@ -4,7 +4,7 @@ export const environment = {
     userlogin:'userlogin',
     fea_product:'fea_product',
     cart:'cart',    
-    URL:'https://7a12-117-217-127-105.ngrok-free.app/api/v1/',
+    URL:'https://0305-117-217-127-105.ngrok-free.app/api/v1/',
     register:'customer/register',
     login:'customer/login',
     changepassword:'customer/changePassword',
