@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
   cart:any
+
   ngOnInit(): void {
     window.scrollTo(0, 0);
   }
@@ -53,6 +54,8 @@ export class CartComponent implements OnInit {
                   getProductTotal(product: any) {
                     return product.quantity * product.product.amount;
                   }
+                  GST:any
+                  Total:any
                   getCartTotal() {
                     let total = 0;
                     this.cart.items.forEach((item: any) => {
@@ -61,6 +64,8 @@ export class CartComponent implements OnInit {
                       localStorage.setItem("Total",JSON.stringify(total))
                     });
                     return total;
+                    this.GST=total*0.18;
+                    this.Total=total+this.GST
                   }
                   deleteItem(id: any) {
                     // Remove the item from the cart array
@@ -72,8 +77,40 @@ export class CartComponent implements OnInit {
                     // Update the local storage
                     localStorage.setItem('cartData', JSON.stringify(this.cart));
                   }
+                  Date(Add_number:any){
+                    let today_date = new Date()
+                    today_date.toLocaleDateString()
+                    let Deliver_date=new Date()
+                
+                    if(Add_number){
+                      Deliver_date.setDate(today_date.getDate()+Add_number)
+                      return Deliver_date
+                    }else{
+                      return today_date
+                    }
+                  }
+                 
+                  Find_Customer_Cart=localStorage.getItem("CustomerData.items")
+                 
+                  // console.log("Find_Customer_Cart",Find_Customer_Cart);
+                         
+                  get_cart_data(){
+
+                  }
+                  data:any
                   checkout(){
-                          
+                    this.data={
+                      "order_date": this.Date(0),
+                      "special_note": "its special",
+                      "estimate_delivery_date": this.Date(3),
+                      "sub_total": this.getCartTotal(),
+                      "tax_amount": this.GST.toFixed(2),
+                      "discount_amount": 10,
+                      "total_amount": this.Total,
+                      "paid_amount": this.Total,
+                      "payment_type": 2,
+                      "order_products":this.get_cart_data(),
+                  }      
                   }
                   
                   

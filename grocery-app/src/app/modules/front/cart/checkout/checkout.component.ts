@@ -52,7 +52,39 @@ encryption(id:any){
 
 
 }
+ body :any ;
+ delivery_address_id :any;
+ billing_address_id :any ;
+ payment_status:any="W4YV_pkH7OAkvZO4P1gbzA==";
+ order_status :any="Nn9l9xhHYQsvNB503C4EAQ==";
+ Encryptdata:any
+ selectAdd(addressSelect:any){
+  // selected=true
+  console.log("addressSelect",addressSelect)
+  this.encrypt.encryption(addressSelect).subscribe({next:(encryption_res:any)=>{
+    if(encryption_res){
+
+      console.log("encryption_res",encryption_res.data)
+      this.delivery_address_id=encryption_res.data
+      this.billing_address_id=encryption_res.data
+      console.log("delivery_address_id",this.delivery_address_id)
+      console.log("billing_address_id",this.billing_address_id)
+      // return this.Encyption_Data
+    }
+  },error:(encryption_error)=>{
+    console.log("encryption_error",encryption_error)
+  }})
+  // this.delivery_address_id=this.encryption(addressSelect)
+  console.log("billing_address_id",this.Encryptdata)
+}
+
 placeorder(){
+this.cartservice.addToCart(this.body,this.delivery_address_id, this.billing_address_id, this.payment_status, this.order_status)
+  .subscribe((response: any[]) => {
+    // Handle the response here
+  }, (error: any) => {
+    // Handle the error here
+  });
 
 //     this.cartservice.addToCart().subscribe({
 // })

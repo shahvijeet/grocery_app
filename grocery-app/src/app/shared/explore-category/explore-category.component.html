@@ -12,7 +12,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
+            <!-- <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">All</a>
                 </li>
@@ -28,7 +28,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Meat</a>
                 </li>
-            </ul>
+            </ul> -->
         </div>
     </div>
 </nav>
@@ -41,7 +41,7 @@
     <div class="carousel-cell" *ngFor="let product of Items">
         <div
             class="card bg-transparent p-3 m-2" >
-            <img src="{{product.image}}" alt="" width="120" height="120"
+            <img src="../../../assets/strawberry.png" alt="" width="120" height="120"
             [routerLink]="['/front/catalog/product-list', product.id]"/>
             <div class="card-body text-center">
                 <h4>{{product.title }}</h4>
