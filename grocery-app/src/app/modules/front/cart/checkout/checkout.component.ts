@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AddressService } from 'src/app/service/address.service';
+import { CartService } from 'src/app/service/cart.service';
 import { EncryptionService } from 'src/app/service/encryption.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class CheckoutComponent implements OnInit {
   addresses: any[] = [];
   total:any
 
-  constructor(private router:Router, private address:AddressService , private encrypt:EncryptionService) { 
+  constructor(private router:Router, private address:AddressService , 
+    private cartservice:CartService,private encrypt:EncryptionService) { 
     const totalData = localStorage.getItem('Total');
     if (totalData) {
       this.total = JSON.parse(totalData);
@@ -22,6 +24,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     window.scrollTo(0, 0);
     this.address.manageaddress().subscribe({
       next:(res:any)=>{
@@ -49,7 +52,11 @@ encryption(id:any){
 
 
 }
+placeorder(){
+
+//     this.cartservice.addToCart().subscribe({
+// })
 
 }
-
+}
 

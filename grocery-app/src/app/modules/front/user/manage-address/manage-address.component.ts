@@ -49,18 +49,21 @@ encryption(id:any){
 
 
 }
-deleteaddress(encryption:any){
-  this.address.deleteaddress(encryption).subscribe({
-    next:(res:any)=>{
-      console.log(res);
-      this.addresses = res.data.addresses;
-      console.log(this.addresses);
-      confirm("Are you sure you want to delete this address?");
-      this.toast.success("Address Deleted Successfully")
-    }
-  })
-}
+deleteaddress(encryption: any) {
+  const confirmed = confirm("Are you sure you want to delete this address?");
 
+  if (confirmed) {
+    this.address.deleteaddress(encryption).subscribe({
+      next: (res: any) => {
+        console.log(res);
+        const deletedAddress = this.addresses.find(address => address.encryption === encryption);
+        const deletedAddressIndex = this.addresses.indexOf(deletedAddress);
+        this.addresses.splice(deletedAddressIndex, 1);
+        this.toast.success("Address Deleted Successfully");
+      }
+    });
+  }
+}
   logout() {
     localStorage.removeItem('adminRegisteredData');
     localStorage.removeItem('User_login_Token');

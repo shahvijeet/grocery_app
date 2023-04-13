@@ -48,7 +48,6 @@ export class AddressComponent implements OnInit {
           "postal_code": this.User_address_data[0].postal_code,
           "landmark": this.User_address_data[0].landmark,
           "tag": this.User_address_data[0].tag});
-          this.toast.success("Address Updated Successfully")
           },
           error:(err:any)=>{
             console.log(err);
@@ -101,9 +100,12 @@ export class AddressComponent implements OnInit {
                 console.log(res);
                 this.addresses = res.data.addresses;
                 this.Address_btn = "ADD Address"
+                this.toast.success("Address Updated Successfully")
                 this.router.navigate(["/front/user/manageaddress"])
                 console.log(this.addresses);
+              
               }
+
             })
           }
 
