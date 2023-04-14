@@ -10,13 +10,14 @@ export class CartService {
   
   baseurl=environment.URL;
   addtocarturl=environment.addorder;
-  carturl=environment.getorderbyid;
-
+  getorderurl=environment.getorderbyid;
+  allorderurl=environment.getcustomerallorders;
 
   constructor(private http:HttpClient) { }
 
-getToCart(){
-  return this.http.get(this.baseurl+this.carturl)
+getToCart(order_id:any){
+  return this.http.get(this.baseurl+this.getorderurl,{headers: new HttpHeaders({'ngrok-skip-browser-warning': 'skip-browser-warning', 
+  'Access-Control-Allow-Origin': '*', 'order_id':order_id})})
 }
 
   addToCart(body:any,delivery_address_id:any,billing_address_id:any,payment_status:any,order_status:any):Observable<any[]>{
@@ -25,10 +26,8 @@ getToCart(){
     'payment_status':payment_status,'order_status':order_status})})
    }
 
-   delToCart(id:any){
-    return this.http.delete(this.baseurl+this.carturl+"/"+id)
-   }
-   updateCart(id:any,products:any){
-    return this.http.put(this.baseurl+this.carturl+"/"+id,products)
+   Get_Customer_All_Orders(){
+    return this.http.get(this.baseurl+this.allorderurl,{headers: new HttpHeaders({'ngrok-skip-browser-warning': 'skip-browser-warning', 
+    'Access-Control-Allow-Origin': '*'})})
    }
 }

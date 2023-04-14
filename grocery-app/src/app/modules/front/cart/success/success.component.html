@@ -1,0 +1,22 @@
+<h1>Order Placed SuccessFully</h1>
+
+<h3>Your Order details</h3>
+<!-- <img src="../../../../../assets/success.jpg" alt=""> -->
+
+<table >
+    <tr>
+        <th>Order Id</th>
+        <th>Total Items</th>
+        <th>Order Date</th>
+        <th>Estimated Order Date</th>
+        <th>Amount To Pay</th>
+    </tr>
+    <tr>
+        <td>{{description.id}}</td>
+        <td>{{description.order_items.length}}</td>
+        <td>{{description.order_date}}</td>
+        <td>{{description.estimate_delivery_date}}</td>
+        <td>{{description.total_amount  | currency}}</td>
+    </tr>
+</table>
+<button routerLink="/home">Back to Home</button>

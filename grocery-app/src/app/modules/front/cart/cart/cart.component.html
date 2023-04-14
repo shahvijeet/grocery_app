@@ -40,12 +40,12 @@
     <th>{{getCartTotal()|currency}}</th>
   </tr>
   <tr>
-    <th>Delivary Charges</th>
-    <th>Free</th>
+    <th>GST Charges</th>
+    <th>{{ GST |currency}}</th>
   </tr>
   <tr>
     <th>Grand Total</th>
-    <th>{{getCartTotal()|currency}}</th>
+    <th>{{ Total |currency}}</th>
   </tr>
   </table>
   <a routerLink="/cart/checkout" class="btn btn-primary" (click)="checkout()">Checkout</a>

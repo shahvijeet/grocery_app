@@ -8,12 +8,14 @@ import { FrontRoutingModule } from './front-routing.module';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { CartComponent } from './cart/cart/cart.component';
 import { CheckoutComponent } from './cart/checkout/checkout.component';
+import { SuccessComponent } from './cart/success/success.component';
 
 
 @NgModule({
   declarations: [
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    SuccessComponent
   ],
   imports: [
     CommonModule,

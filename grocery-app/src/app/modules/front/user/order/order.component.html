@@ -1,68 +1,65 @@
-
 <div>
     <img src="/assets/order.png" class="img" alt="...">
 </div>
-
-<div class="app">
-    <aside class="sidebar">
+<div class="main">
+    <div class="app">
+        <aside class="sidebar">
+            
     
+            <nav class="menu">
+                <a routerLink="/front/user/profile" class="menu-item ">PROFILE</a>
+                <a routerLink="/front/user/address" class="menu-item is-active">ADD ADDRESS</a>
+                <a routerLink="/front/user/orders" class="menu-item ">ORDERS</a>
+                <a routerLink="/front/user/manageaddress" class="menu-item ">MANAGE ADDRESS</a>
+                <a routerLink="/front/user/password" class="menu-item">CHANGE PASSWORD</a>
+                <hr>
+                <a (click)="logout()" class="menu-item" style="margin-top: 100%;">LOG OUT</a>
+                <hr>
+            </nav>
+    
+        </aside>
+    
+        <main class="content">
 
-        <nav class="menu">
-            <a routerLink="/front/user/profile" class="menu-item">PROFILE</a>
-            <a routerLink="/front/user/orders" class="menu-item is-active">ORDERS</a>
-            <a routerLink="/front/user/address" class="menu-item">ADD ADDRESS</a>
-            <a routerLink="/front/user/manageaddress" class="menu-item">MANAGE ADDRESS</a>
-            <a routerLink="/front/user/password" class="menu-item">CHANGE PASSWORD</a>
-            <hr>
-            <a (click)="logout()" class="menu-item" style="margin-top: 100%;">LOG OUT</a>
-            <hr>
-        </nav>
-
-    </aside>
-
-    <main class="content">
-        <div class="container-fluid">
-  
-            <div class="container d-flex mt-5">
+<div class="mx-5">
+    <div style="text-align: center; border-top: 2px solid black; margin-bottom: 10px;">
+      <div style="display: inline-block; position: relative; top: -10px; background-color: white; padding: 0px 10px; font-size: 25px;">
+        Past Orders
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Order Status</th>
+          <th>Order Date</th>
+          <th>Estimate Delivered Date</th>
+          <th>Order Amount</th>
+          <th>Order Items</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let arr of PastOrderArr; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>Complete</td>
+          <td>{{ arr.order_date }}</td>
+          <td>{{ arr.estimate_delivery_date }}</td>
+          <td>RS {{ arr.paid_amount }}</td>
+          <td>
         
-                <div class="container  mx-5">
-                    <div class="d-flex justify-content-center">
-                        <hr class="w-25 ">
-                        <p class="mx-5 fs-6">Past Orders</p>
-                        <hr class="w-25">
-                    </div>
-                    <div class="orders-table">
-                        <div class="d-flex border ">
-                            <i class="fa-solid fa-truck border-right bg-secondary p-2 border-end"></i>  
-                            <span class="mx-5 p-2 border-end">Complete</span> 
-                            <span  class="mx-5 p-2 border-end">12 mar,sun 8.40am - 12.30pm</span>
-                            <span class="mx-5 p-2 border-end">order amount rs162</span>
-                            <span class="mx-5 p-2 ">1 item <i class="fas fa-regular fa-angle-down"></i></span>
-                        </div>
-                        <div class="d-flex border ">
-                            <i class="fa-solid fa-truck border-right bg-secondary p-2 border-end"></i>  
-                            <span class="mx-5 p-2 border-end">Complete</span> 
-                            <span  class="mx-5 p-2 border-end">12 mar,sun 8.40am - 12.30pm</span>
-                            <span class="mx-5 p-2 border-end">order amount rs162</span>
-                            <span class="mx-5 p-2 ">1 item <i class="fas fa-regular fa-angle-down"></i></span>
-                        </div>
-                        <div class="d-flex border ">
-                            <i class="fa-solid fa-truck border-right bg-secondary p-2 border-end"></i>  
-                            <span class="mx-5 p-2 border-end">Complete</span> 
-                            <span  class="mx-5 p-2 border-end">12 mar,sun 8.40am - 12.30pm</span>
-                            <span class="mx-5 p-2 border-end">order amount rs162</span>
-                            <span class="mx-5 p-2 ">1 item <i class="fas fa-regular fa-angle-down"></i></span>
-                        </div>
-                        <div class="d-flex border ">
-                            <i class="fa-solid fa-truck border-right bg-secondary p-2 border-end"></i>  
-                            <span class="mx-5 p-2 border-end">Complete</span> 
-                            <span  class="mx-5 p-2 border-end">12 mar,sun 8.40am - 12.30pm</span>
-                            <span class="mx-5 p-2 border-end">order amount rs162</span>
-                            <span class="mx-5 p-2 ">1 item <i class="fas fa-regular fa-angle-down"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-</div>
+                {{ arr.order_items.length}} 
+                <!-- x {{ item.product_name }} - RS {{ item.product_amount * item.qty }} -->
+              
+          </td>
+        </tr>
+        <tr *ngIf="!PastOrderArr.length">
+          <td colspan="6" class="fs-3 fw-bold text-danger align-items-center text-center mt-4">
+            {{ username }},You haven't Ordered Previously
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+        </main>
+    </div>
+  
