@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit{
    
     // this.http.get<any>("http://localhost:3000/usersignup").subscribe(res=>{
       console.log(res);
-      this.router.navigate(['front/user/profile']);
+      this.router.navigate(['/home']);
         localStorage.setItem("adminRegisteredData",JSON.stringify(res)) ;
         sessionStorage.setItem("adminRegisteredData",JSON.stringify(res)) ;
         // localStorage.setItem("adminRegisteredData",JSON.stringify(user)) ;
