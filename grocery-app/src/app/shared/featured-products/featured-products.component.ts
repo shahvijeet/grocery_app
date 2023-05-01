@@ -9,6 +9,12 @@ import { ProductsService } from 'src/app/service/products.service';
 export class FeaturedProductsComponent {
   product_items: any = [];
   Items:any= [];
+  images=[
+    {img:'/assets/banana.png'},
+    {img:'/assets/brocoli.png'},
+    {img:'/assets/bcarrot.png'},
+    {img:'/assets/apple.png'}
+  ]
 
 constructor(private product:ProductsService){
 

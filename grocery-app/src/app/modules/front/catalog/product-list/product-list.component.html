@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
       <div class="col" *ngFor="let product of filteritem;let i=index">
-          <div class="card bg-white p-2 m-2" >
+          <div class="card product-card " >
             <img  
                   class="rounded mx-auto d-block"
                   src="/assets/tomato.png"
@@ -33,9 +33,7 @@
                 <div class="text-center">
                   <i class="m-2 fw-bolder">{{product.product.amount | currency:'INR'}}</i>
                   <!-- <i class="text-decoration-line-through m-4">{{product.price | currency}}</i> -->
-                  <button class="btn btn-outline-light" >
-                      <img src="/assets/Cart-btn.png" alt=""></button>
-                  </div>
+                  <a [routerLink]="['/front/catalog/product-descrpition/',product.product.id, product.product.slug]" class="btn btn-primary">View Details</a>
                 
               </div>
             </div>

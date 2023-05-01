@@ -9,6 +9,10 @@
     margin-left: 500px;
     margin-top: 100px;
     font-size: 50px;
-    
-
-}
+    }
+    .product-card {
+        width: 300px; /* set a fixed width for the card */
+        height: 400px; /* set a fixed height for the card */
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }

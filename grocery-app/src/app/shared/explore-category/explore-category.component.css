@@ -33,3 +33,7 @@ img{
 carousel{
 z-index: 25;
 }
+.product-card {
+    width: 250px; /* set a fixed width for the card */
+    height: 300px; /* set a fixed height for the card */
+}

@@ -70,8 +70,8 @@ encryption(id:any){
  
  delivery_address_id :any;
  billing_address_id :any ;
- payment_status:any="W4YV_pkH7OAkvZO4P1gbzA==";
- order_status :any="Nn9l9xhHYQsvNB503C4EAQ==";
+ payment_status:any="IJjOhx0uYI4ZK5Y-Wzfm2Q==";
+ order_status :any="JbAbzZt-w7vv_SPXXQI4Jw==";
  Encryptdata:any
  selectAdd(addressSelect:any){
   // selected=true
@@ -90,7 +90,7 @@ encryption(id:any){
   },error:(encryption_error)=>{
     console.log("encryption_error",encryption_error)
   }})
-  // this.delivery_address_id=this.encryption(addressSelect)
+  this.delivery_address_id=this.encryption(addressSelect)
   console.log("billing_address_id",this.Encryptdata)
 }
 
@@ -107,6 +107,7 @@ this.cartservice.addToCart(this.body,this.delivery_address_id, this.billing_addr
   }, (error: any) => {
     // Handle the error here
     this.toast.error("Order Not Placed")
+    console.log("error",error)
   });
 
 

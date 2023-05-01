@@ -40,14 +40,16 @@
     class="container">
     <div class="carousel-cell" *ngFor="let product of Items">
         <div
-            class="card bg-transparent p-3 m-2" >
-            <img src="../../../assets/strawberry.png" alt="" width="120" height="120"
+            class="card product-card" >
+            <img src="/assets/apple.png" alt="/assets/apple.png" width="10" height="100"
             [routerLink]="['/front/catalog/product-list', product.id]"/>
             <div class="card-body text-center">
                 <h4>{{product.title }}</h4>
-                <small>{{product.parent_id}}</small>
+                <small>{{product.length}}</small>
+
             </div>
         </div>
+        
     </div>
 </carousel>
 <!-- <div class="carousel-cell" *ngFor="let product of Items">
