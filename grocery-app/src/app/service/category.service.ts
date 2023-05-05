@@ -15,4 +15,37 @@ export class CategoryService {
       {headers: new HttpHeaders({'ngrok-skip-browser-warning': 'skip-browser-warning', 
       'Access-Control-Allow-Origin': '*'})});
   }
+
+  GetImages_Category(){
+    let imageArray = [
+      {
+        title:"Breakfast",
+         image: "/assets/Category/breakfast.jpg"
+      },
+      {
+        title:"Dairy",
+         image: "/assets/Category/dairy.jpg"
+      },
+      {
+        title:"FoodGrains",
+         image: "/assets/Category/foodgrains.jpg"
+      },
+      {
+        title:"Fruits",
+         image: "/assets/Category/fruits.jpg"
+      },
+      {
+        title:"Meat",
+         image: "/assets/Category/meat.jpg"
+      },
+      {
+        title:"Vegetables",
+         image: "/assets/Category/vegetables.jpg"
+      },
+  
+ 
+   ];
+   
+   return imageArray
+  }
 }

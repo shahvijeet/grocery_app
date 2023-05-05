@@ -34,17 +34,17 @@
 </nav>
 <carousel
     [autoplay]="true"
-    [height]="300"
+    [height]="150"
     [autoplayInterval]="3000"
     [pauseOnHover]="true"
     class="container">
     <div class="carousel-cell" *ngFor="let product of Items">
+        <!-- <img src="/assets/apple.png" alt="/assets/apple.png" width="10" height="100"
+        [routerLink]="['/front/catalog/product-list', product.id]"/> -->
         <div
             class="card product-card" >
-            <img src="/assets/apple.png" alt="/assets/apple.png" width="10" height="100"
-            [routerLink]="['/front/catalog/product-list', product.id]"/>
             <div class="card-body text-center">
-                <h4>{{product.title }}</h4>
+                <h4 [routerLink]="['/front/catalog/product-list', product.id]">{{product.title }}</h4>
                 <small>{{product.length}}</small>
 
             </div>

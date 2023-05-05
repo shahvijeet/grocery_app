@@ -1,7 +1,9 @@
 
 img{
-    width: 70% !important;
-    height: 70% !important;
+    margin-left:5px ;
+    border: 70px;
+    width: 50% !important;
+    height: 50% !important;
 }
 .seller h1{
     font-size: 3rem;
@@ -42,6 +44,7 @@ carousel{
     }
 
     .product-card {
+        border: 2px ;
         width: 300px; /* set a fixed width for the card */
         height: 400px; /* set a fixed height for the card */
     }

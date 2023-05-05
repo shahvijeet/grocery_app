@@ -70,8 +70,8 @@ encryption(id:any){
  
  delivery_address_id :any;
  billing_address_id :any ;
- payment_status:any="IJjOhx0uYI4ZK5Y-Wzfm2Q==";
- order_status :any="JbAbzZt-w7vv_SPXXQI4Jw==";
+ payment_status:any="9htZqKFcgoVKuq2rxtHzZA==";
+ order_status :any="9eP1sdD-oJLxeHoR4-EzUQ==";
  Encryptdata:any
  selectAdd(addressSelect:any){
   // selected=true
